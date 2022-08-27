@@ -33,18 +33,22 @@ class HTTPConnection extends Device {
     bool pingSuccessful = false;
 
     var url = Uri.http(deviceUrl, constants.unencodedPathPing);
-    final response =
-        await http.get(url).timeout(const Duration(seconds: 10), onTimeout: () {
-      return http.Response('Error', 404);
-    });
-
-    if (response.statusCode == 200) {
-      pingSuccessful = true;
-      updateDeviceStatus(types.Status.connected);
-    } else {
-      pingSuccessful = false;
-      updateDeviceStatus(types.Status.reconnetting);
+    try {
+      final response = await http.get(url).timeout(const Duration(seconds: 10),
+          onTimeout: () {
+        return http.Response('Error', 404);
+      });
+      if (response.statusCode == 200) {
+        pingSuccessful = true;
+        updateDeviceStatus(types.Status.connected);
+      } else {
+        pingSuccessful = false;
+        updateDeviceStatus(types.Status.reconnetting);
+      }
+    } catch (e) {
+      print(e);
     }
+
     return pingSuccessful;
   }
 }
