@@ -41,6 +41,7 @@ class HTTPConnection extends Device {
     } else {
       pingSuccessful = false;
       updateDeviceStatus(types.Status.reconnetting);
+      throw Exception("Ping failed");
     }
     return pingSuccessful;
   }
