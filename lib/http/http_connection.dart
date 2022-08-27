@@ -33,7 +33,7 @@ class HTTPConnection extends Device {
     bool pingSuccessful = false;
 
     var url = Uri.http(deviceUrl, constants.unencodedPathPing);
-    var response = await http.get(url);
+    final response = await http.get(url);
 
     if (response.statusCode == 200) {
       pingSuccessful = true;
