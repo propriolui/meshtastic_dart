@@ -19,13 +19,17 @@ class HTTPConnection extends Device {
           : "http://" + deviceAddress;
     }
 
-    if ((status == types.Status.connecting) && ping(deviceAddress)) {
-      print("after ping");
-    }
+    ping(deviceAddress).then((success) => {
+          if (success && (status == types.Status.connecting))
+            {print("after ping")}
+          else
+            {ping(deviceAddress)}
+        });
+
     return null;
   }
 
-  ping(String deviceUrl) async {
+  Future<bool> ping(String deviceUrl) async {
     bool pingSuccessful = false;
 
     var url = Uri.http(deviceUrl, constants.unencodedPathPing);
