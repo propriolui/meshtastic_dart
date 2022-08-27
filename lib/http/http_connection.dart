@@ -33,7 +33,9 @@ class HTTPConnection extends Device {
     bool pingSuccessful = false;
 
     var url = Uri.http(deviceUrl, constants.unencodedPathPing);
-    final response = await http.get(url);
+    final response = await http.get(url).catchError((onError) {
+      throw Exception("Ping failed");
+    });
 
     if (response.statusCode == 200) {
       pingSuccessful = true;
