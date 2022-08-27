@@ -46,7 +46,7 @@ class HTTPConnection extends Device {
         updateDeviceStatus(types.Status.reconnetting);
       }
     } catch (e) {
-      print(e);
+      return false;
     }
 
     return pingSuccessful;
