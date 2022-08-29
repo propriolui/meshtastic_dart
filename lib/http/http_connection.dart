@@ -39,6 +39,7 @@ class HTTPConnection extends Device {
       });
       if (response.statusCode == 200) {
         pingSuccessful = true;
+        print(pingSuccessful);
         updateDeviceStatus(types.Status.connected);
       } else {
         pingSuccessful = false;
