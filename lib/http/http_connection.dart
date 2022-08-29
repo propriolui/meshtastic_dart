@@ -5,7 +5,7 @@ import 'package:meshtastic_dart/utils/types.dart' as types;
 import 'package:meshtastic_dart/utils/constants.dart' as constants;
 
 class HTTPConnection extends Device {
-  Future<void>? httpConnection(types.HTTPConnectionParameters parameters) {
+  Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
     status = types.Status.connecting;
     String deviceAddress = parameters.address;
 
@@ -25,8 +25,6 @@ class HTTPConnection extends Device {
           else
             {ping(deviceAddress)}
         });
-
-    return null;
   }
 
   Future<bool> ping(String deviceUrl) async {
