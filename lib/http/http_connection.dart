@@ -19,6 +19,8 @@ class HTTPConnection extends Device {
           : "http://" + deviceAddress;
     }
 
+    print(deviceAddress);
+
     ping(deviceAddress).then((success) => {
           if (success && (status == types.Status.connecting))
             {print("after ping")}
