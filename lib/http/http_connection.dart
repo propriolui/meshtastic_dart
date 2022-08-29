@@ -6,7 +6,7 @@ import 'package:meshtastic_dart/utils/constants.dart' as constants;
 
 class HTTPConnection extends Device {
   Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
-    status = types.Status.connecting;
+    updateDeviceStatus(types.Status.connecting);
     String deviceAddress = parameters.address;
     /*
     if (parameters.address == "") {
@@ -39,7 +39,6 @@ class HTTPConnection extends Device {
       });
       if (response.statusCode == 200) {
         pingSuccessful = true;
-        print(pingSuccessful);
         updateDeviceStatus(types.Status.connected);
       } else {
         pingSuccessful = false;
