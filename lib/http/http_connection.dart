@@ -8,7 +8,7 @@ class HTTPConnection extends Device {
   Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
     status = types.Status.connecting;
     String deviceAddress = parameters.address;
-
+    /*
     if (parameters.address == "") {
       deviceAddress = (parameters.tls ?? false)
           ? constants.baseUrlHTTPS
@@ -18,8 +18,7 @@ class HTTPConnection extends Device {
           ? "https://" + deviceAddress
           : "http://" + deviceAddress;
     }
-
-    print(deviceAddress);
+*/
 
     ping(deviceAddress).then((success) => {
           if (success && (status == types.Status.connecting))
