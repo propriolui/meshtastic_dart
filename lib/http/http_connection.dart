@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:meshtastic_dart/device.dart';
 import 'package:protobuf/protobuf.dart';
 import 'package:http/http.dart' as http;
@@ -19,21 +21,31 @@ class HTTPConnection extends Device {
           : "http://" + deviceAddress;
     }
 */
+    if (status == types.Status.connecting &&
+        (await ping(deviceAddress, parameters.tls))) {
+      print("connected");
+    } else {
+      if (status != types.Status.disconnected) {
+        sleep(const Duration(seconds: 10));
+        httpConnection(parameters);
+      }
+    }
 
-    ping(deviceAddress).then((success) {
-      print(status.toString());
+    ping(deviceAddress, parameters.tls).then((success) {
       if (success && (status == types.Status.connecting)) {
         print("after ping");
       } else {
-        ping(deviceAddress);
+        ping(deviceAddress, parameters.tls);
       }
     });
   }
 
-  Future<bool> ping(String deviceUrl) async {
+  Future<bool> ping(String deviceUrl, bool? tls) async {
     bool pingSuccessful = false;
 
-    var url = Uri.http(deviceUrl, constants.unencodedPathPing);
+    var url = (tls ?? false)
+        ? Uri.https(deviceUrl, constants.unencodedPathPing)
+        : Uri.http(deviceUrl, constants.unencodedPathPing);
     try {
       final response = await http.get(url).timeout(const Duration(seconds: 10),
           onTimeout: () {
