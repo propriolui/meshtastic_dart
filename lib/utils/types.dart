@@ -8,8 +8,14 @@ enum Status {
 }
 
 class HTTPConnectionParameters {
-  late String address;
+  String address;
   bool? tls;
   bool? receiveBatchRequests;
-  late int fetchInterval;
+  int fetchInterval;
+
+  HTTPConnectionParameters(
+      {required this.address,
+      required this.fetchInterval,
+      this.tls,
+      this.receiveBatchRequests});
 }
