@@ -20,12 +20,14 @@ class HTTPConnection extends Device {
     }
 */
 
-    ping(deviceAddress).then((success) => {
-          if (success && (status == types.Status.connecting))
-            {print("after ping")}
-          else
-            {ping(deviceAddress)}
-        });
+    ping(deviceAddress).then((success) {
+      print(status.toString());
+      if (success && (status == types.Status.connecting)) {
+        print("after ping");
+      } else {
+        ping(deviceAddress);
+      }
+    });
   }
 
   Future<bool> ping(String deviceUrl) async {
