@@ -7,20 +7,12 @@ import 'package:meshtastic_dart/utils/types.dart' as types;
 import 'package:meshtastic_dart/utils/constants.dart' as constants;
 
 class HTTPConnection extends Device {
+  HTTPConnection(int? confId) : super(confId);
+
   Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
     updateDeviceStatus(types.Status.connecting);
     String deviceAddress = parameters.address;
-    /*
-    if (parameters.address == "") {
-      deviceAddress = (parameters.tls ?? false)
-          ? constants.baseUrlHTTPS
-          : constants.baseUrlHTTP;
-    } else {
-      deviceAddress = (parameters.tls ?? false)
-          ? "https://" + deviceAddress
-          : "http://" + deviceAddress;
-    }
-*/
+
     if (status == types.Status.connecting &&
         (await ping(deviceAddress, parameters.tls))) {
       print("connected");
@@ -30,14 +22,6 @@ class HTTPConnection extends Device {
         httpConnection(parameters);
       }
     }
-
-    ping(deviceAddress, parameters.tls).then((success) {
-      if (success && (status == types.Status.connecting)) {
-        print("after ping");
-      } else {
-        ping(deviceAddress, parameters.tls);
-      }
-    });
   }
 
   Future<bool> ping(String deviceUrl, bool? tls) async {
