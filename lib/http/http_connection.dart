@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -9,6 +10,7 @@ import 'package:meshtastic_dart/utils/constants.dart' as constants;
 class HTTPConnection extends Device {
   late bool pendingRequest;
   String url;
+  Timer? readLoop;
 
   HTTPConnection(int? confId, this.url) : super(confId) {
     pendingRequest = false;
@@ -21,12 +23,24 @@ class HTTPConnection extends Device {
     if (status == types.Status.connecting &&
         (await ping(deviceAddress, parameters.tls))) {
       configuration();
+      readLoop = Timer.periodic(const Duration(seconds: 5), (timer) async {
+        try {
+          await readFromRadio();
+        } catch (e) {
+          print(e);
+        }
+      });
     } else {
       if (status != types.Status.disconnected) {
         sleep(const Duration(seconds: 10));
         httpConnection(parameters);
       }
     }
+  }
+
+  void disconnect() {
+    updateDeviceStatus(types.Status.disconnected);
+    closeAll();
   }
 
   Future<bool> ping(String deviceUrl, bool? tls) async {
