@@ -32,8 +32,7 @@ class HTTPConnection extends Device {
       });
     } else {
       if (status != types.Status.disconnected) {
-        sleep(const Duration(seconds: 10));
-        httpConnection(parameters);
+        Timer(const Duration(seconds: 10), (() => httpConnection(parameters)));
       }
     }
   }
