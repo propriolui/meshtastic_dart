@@ -1,5 +1,3 @@
-import 'dart:typed_data';
-
 import 'package:meshtastic_dart/generated/mesh.pb.dart';
 import 'package:meshtastic_dart/generated/telemetry.pb.dart';
 import 'package:meshtastic_dart/generated/remote_hardware.pb.dart';
@@ -30,128 +28,141 @@ abstract class HTTPConnectionParameters {
       this.receiveBatchRequests});
 }
 
-abstract class NodeInfoPacket {
+abstract class BluetoothConnectionParameters {}
+
+class SerialConnectionParameters {
+  int? baudRate;
+}
+
+class NodeInfoPacket {
   MeshPacket packet;
   NodeInfo data;
 
   NodeInfoPacket({required this.packet, required this.data});
 }
 
-abstract class UserPacket {
-  MessagePacket packet;
+class UserPacket {
+  MeshPacket packet;
   User data;
 
   UserPacket({required this.packet, required this.data});
 }
 
-abstract class RoutingPacket {
+class RoutingPacket {
   MeshPacket packet;
   Routing data;
 
   RoutingPacket({required this.packet, required this.data});
 }
 
-abstract class PositionPacket {
+class PositionPacket {
   MeshPacket packet;
   Position data;
 
   PositionPacket({required this.packet, required this.data});
 }
 
-abstract class MessagePacket {
+class MessagePacket {
   MeshPacket packet;
   String text;
 
   MessagePacket({required this.packet, required this.text});
 }
 
-abstract class PingPacket {
+class PingPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   PingPacket({required this.packet, required this.data});
 }
 
-abstract class IpTunnelPacket {
+class IpTunnelPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   IpTunnelPacket({required this.packet, required this.data});
 }
 
-abstract class SerialPacket {
+class SerialPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   SerialPacket({required this.packet, required this.data});
 }
 
-abstract class StoreForwardPacket {
+class StoreForwardPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   StoreForwardPacket({required this.packet, required this.data});
 }
 
-abstract class RangeTestPacket {
+class RangeTestPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   RangeTestPacket({required this.packet, required this.data});
 }
 
-abstract class TelemetryPacket {
+class TelemetryPacket {
   MeshPacket packet;
   Telemetry data;
 
   TelemetryPacket({required this.packet, required this.data});
 }
 
-abstract class PrivatePacket {
+class PrivatePacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   PrivatePacket({required this.packet, required this.data});
 }
 
-abstract class AtakPacket {
+class AtakPacket {
   MeshPacket packet;
-  Uint8List data;
+  List<int> data;
 
   AtakPacket({required this.packet, required this.data});
 }
 
-abstract class RemoteHardwarePacket {
+class RemoteHardwarePacket {
   MeshPacket packet;
   HardwareMessage data;
 
   RemoteHardwarePacket({required this.packet, required this.data});
 }
 
-abstract class ChannelPacket {
+class ChannelPacket {
   MeshPacket packet;
   Channel data;
 
   ChannelPacket({required this.packet, required this.data});
 }
 
-abstract class ConfigPacket {
+class ConfigPacket {
   MeshPacket packet;
   Config data;
 
   ConfigPacket({required this.packet, required this.data});
 }
 
-abstract class ModuleConfigPacket {
+class ModuleConfigPacket {
   MeshPacket packet;
   ModuleConfig data;
 
   ModuleConfigPacket({required this.packet, required this.data});
 }
 
-abstract class DeviceMetadataPacket {
+class DeviceMetadataPacket {
   MeshPacket packet;
   DeviceMetadata data;
 
   DeviceMetadataPacket({required this.packet, required this.data});
+}
+
+class WayPointPacket {
+  MeshPacket packet;
+  Waypoint data;
+
+  WayPointPacket({required this.packet, required this.data});
 }

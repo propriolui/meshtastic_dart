@@ -1,13 +1,18 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:meshtastic_dart/device.dart';
-import 'package:protobuf/protobuf.dart';
 import 'package:http/http.dart' as http;
 import 'package:meshtastic_dart/utils/types.dart' as types;
 import 'package:meshtastic_dart/utils/constants.dart' as constants;
 
 class HTTPConnection extends Device {
-  HTTPConnection(int? confId) : super(confId);
+  late bool pendingRequest;
+  String url;
+
+  HTTPConnection(int? confId, this.url) : super(confId) {
+    pendingRequest = false;
+  }
 
   Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
     updateDeviceStatus(types.Status.connecting);
@@ -15,7 +20,7 @@ class HTTPConnection extends Device {
 
     if (status == types.Status.connecting &&
         (await ping(deviceAddress, parameters.tls))) {
-      print("connected");
+      configuration();
     } else {
       if (status != types.Status.disconnected) {
         sleep(const Duration(seconds: 10));
@@ -47,5 +52,60 @@ class HTTPConnection extends Device {
     }
 
     return pingSuccessful;
+  }
+
+  Future<void> readFromRadio() async {
+    if (pendingRequest) {
+      return;
+    }
+
+    List<int> readBuffer = [1];
+    var uri = Uri.http(url, constants.fromRadioPath);
+
+    while (readBuffer.isNotEmpty) {
+      pendingRequest = true;
+      try {
+        final response =
+            http.get(uri, headers: {"Accept": "application/x-protobuf"});
+        response.then((value) async {
+          pendingRequest = false;
+          updateDeviceStatus(types.Status.connected);
+
+          readBuffer = value.bodyBytes;
+
+          if (readBuffer.isNotEmpty) {
+            await fromRadioHandler(readBuffer);
+          }
+        });
+      } catch (e) {
+        pendingRequest = false;
+        print("error in get fromRadio");
+        updateDeviceStatus(types.Status.reconnetting);
+        return;
+      }
+    }
+  }
+
+  @override
+  Future<void> writeToRadio(List<int> data) async {
+    var uri = Uri.http(url, constants.toRadioPath);
+    try {
+      final response = http.put(uri,
+          headers: {"Content-type": "application/x-protobuf"},
+          body: Uint8List.fromList(data));
+
+      response.then((value) async {
+        updateDeviceStatus(types.Status.connected);
+        try {
+          await readFromRadio();
+        } catch (e) {
+          print("error from radio inside write radio");
+        }
+      });
+    } catch (e) {
+      print("error in put request");
+      updateDeviceStatus(types.Status.reconnetting);
+      return;
+    }
   }
 }
