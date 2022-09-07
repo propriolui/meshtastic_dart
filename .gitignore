@@ -16,7 +16,6 @@
 .idea/
 
 # Application files
-lib/generated/*.dart
 
 #meshtastic protobuf
 /Meshtastic-protobufs
