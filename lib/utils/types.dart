@@ -15,7 +15,7 @@ enum Status {
   configured
 }
 
-abstract class HTTPConnectionParameters {
+class HTTPConnectionParameters {
   String address;
   bool? tls;
   bool? receiveBatchRequests;
