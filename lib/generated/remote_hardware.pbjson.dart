@@ -12,7 +12,7 @@ import 'dart:typed_data' as $typed_data;
 const HardwareMessage$json = const {
   '1': 'HardwareMessage',
   '2': const [
-    const {'1': 'typ', '3': 1, '4': 1, '5': 14, '6': '.HardwareMessage.Type', '10': 'typ'},
+    const {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.HardwareMessage.Type', '10': 'type'},
     const {'1': 'gpio_mask', '3': 2, '4': 1, '5': 4, '10': 'gpioMask'},
     const {'1': 'gpio_value', '3': 3, '4': 1, '5': 4, '10': 'gpioValue'},
   ],
@@ -33,4 +33,4 @@ const HardwareMessage_Type$json = const {
 };
 
 /// Descriptor for `HardwareMessage`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List hardwareMessageDescriptor = $convert.base64Decode('Cg9IYXJkd2FyZU1lc3NhZ2USJwoDdHlwGAEgASgOMhUuSGFyZHdhcmVNZXNzYWdlLlR5cGVSA3R5cBIbCglncGlvX21hc2sYAiABKARSCGdwaW9NYXNrEh0KCmdwaW9fdmFsdWUYAyABKARSCWdwaW9WYWx1ZSJsCgRUeXBlEgkKBVVOU0VUEAASDwoLV1JJVEVfR1BJT1MQARIPCgtXQVRDSF9HUElPUxACEhEKDUdQSU9TX0NIQU5HRUQQAxIOCgpSRUFEX0dQSU9TEAQSFAoQUkVBRF9HUElPU19SRVBMWRAF');
+final $typed_data.Uint8List hardwareMessageDescriptor = $convert.base64Decode('Cg9IYXJkd2FyZU1lc3NhZ2USKQoEdHlwZRgBIAEoDjIVLkhhcmR3YXJlTWVzc2FnZS5UeXBlUgR0eXBlEhsKCWdwaW9fbWFzaxgCIAEoBFIIZ3Bpb01hc2sSHQoKZ3Bpb192YWx1ZRgDIAEoBFIJZ3Bpb1ZhbHVlImwKBFR5cGUSCQoFVU5TRVQQABIPCgtXUklURV9HUElPUxABEg8KC1dBVENIX0dQSU9TEAISEQoNR1BJT1NfQ0hBTkdFRBADEg4KClJFQURfR1BJT1MQBBIUChBSRUFEX0dQSU9TX1JFUExZEAU=');

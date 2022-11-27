@@ -9,8 +9,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'mesh.pb.dart' as $4;
-import 'channel.pb.dart' as $5;
+import 'mesh.pb.dart' as $5;
+import 'channel.pb.dart' as $3;
 
 import 'deviceonly.pbenum.dart';
 
@@ -18,11 +18,11 @@ export 'deviceonly.pbenum.dart';
 
 class DeviceState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeviceState', createEmptyInstance: create)
-    ..aOM<$4.MyNodeInfo>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'myNode', subBuilder: $4.MyNodeInfo.create)
-    ..aOM<$4.User>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner', subBuilder: $4.User.create)
-    ..pc<$4.NodeInfo>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nodeDb', $pb.PbFieldType.PM, subBuilder: $4.NodeInfo.create)
-    ..pc<$4.MeshPacket>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receiveQueue', $pb.PbFieldType.PM, subBuilder: $4.MeshPacket.create)
-    ..aOM<$4.MeshPacket>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxTextMessage', subBuilder: $4.MeshPacket.create)
+    ..aOM<$5.MyNodeInfo>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'myNode', subBuilder: $5.MyNodeInfo.create)
+    ..aOM<$5.User>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'owner', subBuilder: $5.User.create)
+    ..pc<$5.NodeInfo>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nodeDb', $pb.PbFieldType.PM, subBuilder: $5.NodeInfo.create)
+    ..pc<$5.MeshPacket>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receiveQueue', $pb.PbFieldType.PM, subBuilder: $5.MeshPacket.create)
+    ..aOM<$5.MeshPacket>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxTextMessage', subBuilder: $5.MeshPacket.create)
     ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.OU3)
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'noSave')
     ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'didGpsReset')
@@ -31,11 +31,11 @@ class DeviceState extends $pb.GeneratedMessage {
 
   DeviceState._() : super();
   factory DeviceState({
-    $4.MyNodeInfo? myNode,
-    $4.User? owner,
-    $core.Iterable<$4.NodeInfo>? nodeDb,
-    $core.Iterable<$4.MeshPacket>? receiveQueue,
-    $4.MeshPacket? rxTextMessage,
+    $5.MyNodeInfo? myNode,
+    $5.User? owner,
+    $core.Iterable<$5.NodeInfo>? nodeDb,
+    $core.Iterable<$5.MeshPacket>? receiveQueue,
+    $5.MeshPacket? rxTextMessage,
     $core.int? version,
     $core.bool? noSave,
     $core.bool? didGpsReset,
@@ -89,43 +89,43 @@ class DeviceState extends $pb.GeneratedMessage {
   static DeviceState? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $4.MyNodeInfo get myNode => $_getN(0);
+  $5.MyNodeInfo get myNode => $_getN(0);
   @$pb.TagNumber(2)
-  set myNode($4.MyNodeInfo v) { setField(2, v); }
+  set myNode($5.MyNodeInfo v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasMyNode() => $_has(0);
   @$pb.TagNumber(2)
   void clearMyNode() => clearField(2);
   @$pb.TagNumber(2)
-  $4.MyNodeInfo ensureMyNode() => $_ensure(0);
+  $5.MyNodeInfo ensureMyNode() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $4.User get owner => $_getN(1);
+  $5.User get owner => $_getN(1);
   @$pb.TagNumber(3)
-  set owner($4.User v) { setField(3, v); }
+  set owner($5.User v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasOwner() => $_has(1);
   @$pb.TagNumber(3)
   void clearOwner() => clearField(3);
   @$pb.TagNumber(3)
-  $4.User ensureOwner() => $_ensure(1);
+  $5.User ensureOwner() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $core.List<$4.NodeInfo> get nodeDb => $_getList(2);
+  $core.List<$5.NodeInfo> get nodeDb => $_getList(2);
 
   @$pb.TagNumber(5)
-  $core.List<$4.MeshPacket> get receiveQueue => $_getList(3);
+  $core.List<$5.MeshPacket> get receiveQueue => $_getList(3);
 
   @$pb.TagNumber(7)
-  $4.MeshPacket get rxTextMessage => $_getN(4);
+  $5.MeshPacket get rxTextMessage => $_getN(4);
   @$pb.TagNumber(7)
-  set rxTextMessage($4.MeshPacket v) { setField(7, v); }
+  set rxTextMessage($5.MeshPacket v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasRxTextMessage() => $_has(4);
   @$pb.TagNumber(7)
   void clearRxTextMessage() => clearField(7);
   @$pb.TagNumber(7)
-  $4.MeshPacket ensureRxTextMessage() => $_ensure(4);
+  $5.MeshPacket ensureRxTextMessage() => $_ensure(4);
 
   @$pb.TagNumber(8)
   $core.int get version => $_getIZ(5);
@@ -157,14 +157,14 @@ class DeviceState extends $pb.GeneratedMessage {
 
 class ChannelFile extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelFile', createEmptyInstance: create)
-    ..pc<$5.Channel>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: $5.Channel.create)
+    ..pc<$3.Channel>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channels', $pb.PbFieldType.PM, subBuilder: $3.Channel.create)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
   ChannelFile._() : super();
   factory ChannelFile({
-    $core.Iterable<$5.Channel>? channels,
+    $core.Iterable<$3.Channel>? channels,
     $core.int? version,
   }) {
     final _result = create();
@@ -198,7 +198,7 @@ class ChannelFile extends $pb.GeneratedMessage {
   static ChannelFile? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$5.Channel> get channels => $_getList(0);
+  $core.List<$3.Channel> get channels => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.int get version => $_getIZ(1);
@@ -217,6 +217,7 @@ class OEMStore extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'oemIconBits', $pb.PbFieldType.OY)
     ..e<ScreenFonts>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'oemFont', $pb.PbFieldType.OE, defaultOrMaker: ScreenFonts.FONT_SMALL, valueOf: ScreenFonts.valueOf, enumValues: ScreenFonts.values)
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'oemText')
+    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'oemAesKey', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
@@ -227,6 +228,7 @@ class OEMStore extends $pb.GeneratedMessage {
     $core.List<$core.int>? oemIconBits,
     ScreenFonts? oemFont,
     $core.String? oemText,
+    $core.List<$core.int>? oemAesKey,
   }) {
     final _result = create();
     if (oemIconWidth != null) {
@@ -243,6 +245,9 @@ class OEMStore extends $pb.GeneratedMessage {
     }
     if (oemText != null) {
       _result.oemText = oemText;
+    }
+    if (oemAesKey != null) {
+      _result.oemAesKey = oemAesKey;
     }
     return _result;
   }
@@ -311,5 +316,14 @@ class OEMStore extends $pb.GeneratedMessage {
   $core.bool hasOemText() => $_has(4);
   @$pb.TagNumber(5)
   void clearOemText() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.List<$core.int> get oemAesKey => $_getN(5);
+  @$pb.TagNumber(6)
+  set oemAesKey($core.List<$core.int> v) { $_setBytes(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasOemAesKey() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearOemAesKey() => clearField(6);
 }
 

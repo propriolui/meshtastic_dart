@@ -13,6 +13,10 @@ class DeviceMetadata extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeviceMetadata', createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firmwareVersion')
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'deviceStateVersion', $pb.PbFieldType.OU3)
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'canShutdown', protoName: 'canShutdown')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasWifi', protoName: 'hasWifi')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasBluetooth', protoName: 'hasBluetooth')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasEthernet', protoName: 'hasEthernet')
     ..hasRequiredFields = false
   ;
 
@@ -20,6 +24,10 @@ class DeviceMetadata extends $pb.GeneratedMessage {
   factory DeviceMetadata({
     $core.String? firmwareVersion,
     $core.int? deviceStateVersion,
+    $core.bool? canShutdown,
+    $core.bool? hasWifi,
+    $core.bool? hasBluetooth,
+    $core.bool? hasEthernet,
   }) {
     final _result = create();
     if (firmwareVersion != null) {
@@ -27,6 +35,18 @@ class DeviceMetadata extends $pb.GeneratedMessage {
     }
     if (deviceStateVersion != null) {
       _result.deviceStateVersion = deviceStateVersion;
+    }
+    if (canShutdown != null) {
+      _result.canShutdown = canShutdown;
+    }
+    if (hasWifi != null) {
+      _result.hasWifi = hasWifi;
+    }
+    if (hasBluetooth != null) {
+      _result.hasBluetooth = hasBluetooth;
+    }
+    if (hasEthernet != null) {
+      _result.hasEthernet = hasEthernet;
     }
     return _result;
   }
@@ -68,5 +88,41 @@ class DeviceMetadata extends $pb.GeneratedMessage {
   $core.bool hasDeviceStateVersion() => $_has(1);
   @$pb.TagNumber(2)
   void clearDeviceStateVersion() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.bool get canShutdown => $_getBF(2);
+  @$pb.TagNumber(3)
+  set canShutdown($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCanShutdown() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCanShutdown() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.bool get hasWifi => $_getBF(3);
+  @$pb.TagNumber(4)
+  set hasWifi($core.bool v) { $_setBool(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasHasWifi() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearHasWifi() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.bool get hasBluetooth => $_getBF(4);
+  @$pb.TagNumber(5)
+  set hasBluetooth($core.bool v) { $_setBool(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasHasBluetooth() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearHasBluetooth() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get hasEthernet => $_getBF(5);
+  @$pb.TagNumber(6)
+  set hasEthernet($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasHasEthernet() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearHasEthernet() => clearField(6);
 }
 

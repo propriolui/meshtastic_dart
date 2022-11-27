@@ -20,6 +20,7 @@ class ModuleConfig_MQTTConfig extends $pb.GeneratedMessage {
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'username')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encryptionEnabled')
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'jsonEnabled')
     ..hasRequiredFields = false
   ;
 
@@ -30,6 +31,7 @@ class ModuleConfig_MQTTConfig extends $pb.GeneratedMessage {
     $core.String? username,
     $core.String? password,
     $core.bool? encryptionEnabled,
+    $core.bool? jsonEnabled,
   }) {
     final _result = create();
     if (enabled != null) {
@@ -46,6 +48,9 @@ class ModuleConfig_MQTTConfig extends $pb.GeneratedMessage {
     }
     if (encryptionEnabled != null) {
       _result.encryptionEnabled = encryptionEnabled;
+    }
+    if (jsonEnabled != null) {
+      _result.jsonEnabled = jsonEnabled;
     }
     return _result;
   }
@@ -114,6 +119,15 @@ class ModuleConfig_MQTTConfig extends $pb.GeneratedMessage {
   $core.bool hasEncryptionEnabled() => $_has(4);
   @$pb.TagNumber(5)
   void clearEncryptionEnabled() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get jsonEnabled => $_getBF(5);
+  @$pb.TagNumber(6)
+  set jsonEnabled($core.bool v) { $_setBool(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasJsonEnabled() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearJsonEnabled() => clearField(6);
 }
 
 class ModuleConfig_SerialConfig extends $pb.GeneratedMessage {
@@ -122,9 +136,9 @@ class ModuleConfig_SerialConfig extends $pb.GeneratedMessage {
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'echo')
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxd', $pb.PbFieldType.OU3)
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'txd', $pb.PbFieldType.OU3)
-    ..e<ModuleConfig_SerialConfig_Serial_Baud>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'baud', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_SerialConfig_Serial_Baud.BAUD_Default, valueOf: ModuleConfig_SerialConfig_Serial_Baud.valueOf, enumValues: ModuleConfig_SerialConfig_Serial_Baud.values)
+    ..e<ModuleConfig_SerialConfig_Serial_Baud>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'baud', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_SerialConfig_Serial_Baud.BAUD_DEFAULT, valueOf: ModuleConfig_SerialConfig_Serial_Baud.valueOf, enumValues: ModuleConfig_SerialConfig_Serial_Baud.values)
     ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeout', $pb.PbFieldType.OU3)
-    ..e<ModuleConfig_SerialConfig_Serial_Mode>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_SerialConfig_Serial_Mode.MODE_Default, valueOf: ModuleConfig_SerialConfig_Serial_Mode.valueOf, enumValues: ModuleConfig_SerialConfig_Serial_Mode.values)
+    ..e<ModuleConfig_SerialConfig_Serial_Mode>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_SerialConfig_Serial_Mode.DEFAULT, valueOf: ModuleConfig_SerialConfig_Serial_Mode.valueOf, enumValues: ModuleConfig_SerialConfig_Serial_Mode.values)
     ..hasRequiredFields = false
   ;
 
@@ -548,7 +562,7 @@ class ModuleConfig_TelemetryConfig extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'environmentUpdateInterval', $pb.PbFieldType.OU3)
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'environmentMeasurementEnabled')
     ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'environmentScreenEnabled')
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'environmentDisplayFahrenheit')
+    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'environmentDisplayFahrenheit')
     ..hasRequiredFields = false
   ;
 
@@ -635,14 +649,14 @@ class ModuleConfig_TelemetryConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearEnvironmentScreenEnabled() => clearField(4);
 
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
   $core.bool get environmentDisplayFahrenheit => $_getBF(4);
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
   set environmentDisplayFahrenheit($core.bool v) { $_setBool(4, v); }
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(5)
   $core.bool hasEnvironmentDisplayFahrenheit() => $_has(4);
-  @$pb.TagNumber(7)
-  void clearEnvironmentDisplayFahrenheit() => clearField(7);
+  @$pb.TagNumber(5)
+  void clearEnvironmentDisplayFahrenheit() => clearField(5);
 }
 
 class ModuleConfig_CannedMessageConfig extends $pb.GeneratedMessage {
@@ -651,9 +665,9 @@ class ModuleConfig_CannedMessageConfig extends $pb.GeneratedMessage {
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerPinA', $pb.PbFieldType.OU3)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerPinB', $pb.PbFieldType.OU3)
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerPinPress', $pb.PbFieldType.OU3)
-    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventCw', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.KEY_NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
-    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventCcw', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.KEY_NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
-    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventPress', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.KEY_NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
+    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventCw', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
+    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventCcw', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
+    ..e<ModuleConfig_CannedMessageConfig_InputEventChar>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputbrokerEventPress', $pb.PbFieldType.OE, defaultOrMaker: ModuleConfig_CannedMessageConfig_InputEventChar.NONE, valueOf: ModuleConfig_CannedMessageConfig_InputEventChar.valueOf, enumValues: ModuleConfig_CannedMessageConfig_InputEventChar.values)
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'updown1Enabled')
     ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'enabled')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'allowInputSource')

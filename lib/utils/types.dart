@@ -1,10 +1,10 @@
-import 'package:meshtastic_dart/generated/mesh.pb.dart';
-import 'package:meshtastic_dart/generated/telemetry.pb.dart';
-import 'package:meshtastic_dart/generated/remote_hardware.pb.dart';
-import 'package:meshtastic_dart/generated/module_config.pb.dart';
-import 'package:meshtastic_dart/generated/channel.pb.dart';
-import 'package:meshtastic_dart/generated/config.pb.dart';
-import 'package:meshtastic_dart/generated/device_metadata.pb.dart';
+import '../generated/mesh.pb.dart';
+import '../generated/telemetry.pb.dart';
+import '../generated/remote_hardware.pb.dart';
+import '../generated/module_config.pb.dart';
+import '../generated/channel.pb.dart';
+import '../generated/config.pb.dart';
+import '../generated/device_metadata.pb.dart';
 
 enum Status {
   connecting,

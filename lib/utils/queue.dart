@@ -3,14 +3,14 @@ import 'dart:async';
 class QuequeObj {
   int id;
   List<int> data;
-  Future<void> Function(int id) callback;
+  Future<void> Function(int id)? callback;
   bool waitAck;
 
   QuequeObj(this.id, this.data, this.callback, this.waitAck);
 }
 
 class Queue {
-  List<QuequeObj> queue = List.empty();
+  List<QuequeObj> queue = List.empty(growable: true);
   bool isLocked = false;
 
   void push(QuequeObj obj) {
@@ -25,10 +25,12 @@ class Queue {
     try {
       final item = queue.firstWhere((element) => element.id == id);
 
-      await item.callback(id);
+      if (item.callback != null) {
+        await item.callback!(id);
+      }
       remove(item.id);
     } catch (e) {
-      print(e);
+      print("error:" + e.toString());
       return;
     }
   }
@@ -46,14 +48,16 @@ class Queue {
         final item = queue.firstWhere((element) => !element.waitAck);
         queue.remove(item);
 
-        Future.delayed(const Duration(milliseconds: 200), () {
-          item.callback(item.id);
+        Future.delayed(const Duration(milliseconds: 200), () async {
+          if (item.callback != null) {
+            await item.callback!(item.id);
+          }
         });
         await writeToRadio(item.data);
         item.waitAck = true;
         queue.add(item);
       } catch (e) {
-        print(e);
+        print("error:" + e.toString());
       }
     }
 

@@ -9,11 +9,11 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'mesh.pb.dart' as $4;
+import 'mesh.pb.dart' as $5;
 
 class ServiceEnvelope extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ServiceEnvelope', createEmptyInstance: create)
-    ..aOM<$4.MeshPacket>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: $4.MeshPacket.create)
+    ..aOM<$5.MeshPacket>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: $5.MeshPacket.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelId')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gatewayId')
     ..hasRequiredFields = false
@@ -21,7 +21,7 @@ class ServiceEnvelope extends $pb.GeneratedMessage {
 
   ServiceEnvelope._() : super();
   factory ServiceEnvelope({
-    $4.MeshPacket? packet,
+    $5.MeshPacket? packet,
     $core.String? channelId,
     $core.String? gatewayId,
   }) {
@@ -59,15 +59,15 @@ class ServiceEnvelope extends $pb.GeneratedMessage {
   static ServiceEnvelope? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.MeshPacket get packet => $_getN(0);
+  $5.MeshPacket get packet => $_getN(0);
   @$pb.TagNumber(1)
-  set packet($4.MeshPacket v) { setField(1, v); }
+  set packet($5.MeshPacket v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPacket() => $_has(0);
   @$pb.TagNumber(1)
   void clearPacket() => clearField(1);
   @$pb.TagNumber(1)
-  $4.MeshPacket ensurePacket() => $_ensure(0);
+  $5.MeshPacket ensurePacket() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get channelId => $_getSZ(1);

@@ -1,32 +1,39 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:meshtastic_dart/device.dart';
+import '../device.dart';
 import 'package:http/http.dart' as http;
-import 'package:meshtastic_dart/utils/types.dart' as types;
-import 'package:meshtastic_dart/utils/constants.dart' as constants;
+import '../utils/types.dart' as types;
+import '../utils/constants.dart' as constants;
 
 class HTTPConnection extends Device {
   late bool pendingRequest;
-  String url;
+  late String url;
   Timer? readLoop;
+  bool tls = false;
 
-  HTTPConnection(int? confId, this.url) : super(confId) {
+  HTTPConnection({confId}) : super(confId) {
     pendingRequest = false;
+    url = "meshtastic.local";
   }
 
   Future<void> httpConnection(types.HTTPConnectionParameters parameters) async {
     updateDeviceStatus(types.Status.connecting);
-    String deviceAddress = parameters.address;
+    if (parameters.address != "") {
+      url = parameters.address;
+    }
 
-    if (status == types.Status.connecting &&
-        (await ping(deviceAddress, parameters.tls))) {
+    if (parameters.tls != null) {
+      tls = parameters.tls!;
+    }
+
+    if (status == types.Status.connecting && (await ping(url, tls))) {
       configuration();
       readLoop = Timer.periodic(const Duration(seconds: 5), (timer) async {
         try {
           await readFromRadio();
         } catch (e) {
-          print(e);
+          print("error" + e.toString());
         }
       });
     } else {
@@ -36,14 +43,16 @@ class HTTPConnection extends Device {
     }
   }
 
-  void disconnect() {
+  void disconnect() async {
     updateDeviceStatus(types.Status.disconnected);
+    if (readLoop != null) {
+      readLoop?.cancel();
+    }
     closeAll();
   }
 
   Future<bool> ping(String deviceUrl, bool? tls) async {
     bool pingSuccessful = false;
-
     var url = (tls ?? false)
         ? Uri.https(deviceUrl, constants.unencodedPathPing)
         : Uri.http(deviceUrl, constants.unencodedPathPing);
@@ -62,7 +71,6 @@ class HTTPConnection extends Device {
     } catch (e) {
       return false;
     }
-
     return pingSuccessful;
   }
 
@@ -72,23 +80,29 @@ class HTTPConnection extends Device {
     }
 
     List<int> readBuffer = [1];
-    var uri = Uri.http(url, constants.fromRadioPath);
+
+    var uri = tls
+        ? Uri.https(url, constants.fromRadioPath)
+        : Uri.http(url, constants.fromRadioPath);
 
     while (readBuffer.isNotEmpty) {
       pendingRequest = true;
+
       try {
         final response =
-            http.get(uri, headers: {"Accept": "application/x-protobuf"});
-        response.then((value) async {
+            await http.get(uri, headers: {"Accept": "application/x-protobuf"});
+        if (response.statusCode == 200) {
           pendingRequest = false;
           updateDeviceStatus(types.Status.connected);
 
-          readBuffer = value.bodyBytes;
-
+          readBuffer = response.bodyBytes;
           if (readBuffer.isNotEmpty) {
             await fromRadioHandler(readBuffer);
           }
-        });
+        } else {
+          print("bad response");
+          return;
+        }
       } catch (e) {
         pendingRequest = false;
         print("error in get fromRadio");
@@ -96,11 +110,14 @@ class HTTPConnection extends Device {
         return;
       }
     }
+    return;
   }
 
   @override
   Future<void> writeToRadio(List<int> data) async {
-    var uri = Uri.http(url, constants.toRadioPath);
+    var uri = tls
+        ? Uri.https(url, constants.toRadioPath)
+        : Uri.http(url, constants.toRadioPath);
     try {
       final response = http.put(uri,
           headers: {"Content-type": "application/x-protobuf"},

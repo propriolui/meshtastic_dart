@@ -12,17 +12,24 @@ import 'dart:typed_data' as $typed_data;
 const ChannelSettings$json = const {
   '1': 'ChannelSettings',
   '2': const [
-    const {'1': 'channel_num', '3': 9, '4': 1, '5': 13, '10': 'channelNum'},
-    const {'1': 'psk', '3': 4, '4': 1, '5': 12, '10': 'psk'},
-    const {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'id', '3': 10, '4': 1, '5': 7, '10': 'id'},
-    const {'1': 'uplink_enabled', '3': 16, '4': 1, '5': 8, '10': 'uplinkEnabled'},
-    const {'1': 'downlink_enabled', '3': 17, '4': 1, '5': 8, '10': 'downlinkEnabled'},
+    const {
+      '1': 'channel_num',
+      '3': 1,
+      '4': 1,
+      '5': 13,
+      '8': const {'3': true},
+      '10': 'channelNum',
+    },
+    const {'1': 'psk', '3': 2, '4': 1, '5': 12, '10': 'psk'},
+    const {'1': 'name', '3': 3, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'id', '3': 4, '4': 1, '5': 7, '10': 'id'},
+    const {'1': 'uplink_enabled', '3': 5, '4': 1, '5': 8, '10': 'uplinkEnabled'},
+    const {'1': 'downlink_enabled', '3': 6, '4': 1, '5': 8, '10': 'downlinkEnabled'},
   ],
 };
 
 /// Descriptor for `ChannelSettings`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List channelSettingsDescriptor = $convert.base64Decode('Cg9DaGFubmVsU2V0dGluZ3MSHwoLY2hhbm5lbF9udW0YCSABKA1SCmNoYW5uZWxOdW0SEAoDcHNrGAQgASgMUgNwc2sSEgoEbmFtZRgFIAEoCVIEbmFtZRIOCgJpZBgKIAEoB1ICaWQSJQoOdXBsaW5rX2VuYWJsZWQYECABKAhSDXVwbGlua0VuYWJsZWQSKQoQZG93bmxpbmtfZW5hYmxlZBgRIAEoCFIPZG93bmxpbmtFbmFibGVk');
+final $typed_data.Uint8List channelSettingsDescriptor = $convert.base64Decode('Cg9DaGFubmVsU2V0dGluZ3MSIwoLY2hhbm5lbF9udW0YASABKA1CAhgBUgpjaGFubmVsTnVtEhAKA3BzaxgCIAEoDFIDcHNrEhIKBG5hbWUYAyABKAlSBG5hbWUSDgoCaWQYBCABKAdSAmlkEiUKDnVwbGlua19lbmFibGVkGAUgASgIUg11cGxpbmtFbmFibGVkEikKEGRvd25saW5rX2VuYWJsZWQYBiABKAhSD2Rvd25saW5rRW5hYmxlZA==');
 @$core.Deprecated('Use channelDescriptor instead')
 const Channel$json = const {
   '1': 'Channel',

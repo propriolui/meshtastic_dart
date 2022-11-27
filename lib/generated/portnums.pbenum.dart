@@ -26,6 +26,7 @@ class PortNum extends $pb.ProtobufEnum {
   static const PortNum RANGE_TEST_APP = PortNum._(66, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RANGE_TEST_APP');
   static const PortNum TELEMETRY_APP = PortNum._(67, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TELEMETRY_APP');
   static const PortNum ZPS_APP = PortNum._(68, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ZPS_APP');
+  static const PortNum SIMULATOR_APP = PortNum._(69, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SIMULATOR_APP');
   static const PortNum PRIVATE_APP = PortNum._(256, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PRIVATE_APP');
   static const PortNum ATAK_FORWARDER = PortNum._(257, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ATAK_FORWARDER');
   static const PortNum MAX = PortNum._(511, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'MAX');
@@ -47,6 +48,7 @@ class PortNum extends $pb.ProtobufEnum {
     RANGE_TEST_APP,
     TELEMETRY_APP,
     ZPS_APP,
+    SIMULATOR_APP,
     PRIVATE_APP,
     ATAK_FORWARDER,
     MAX,

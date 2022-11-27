@@ -15,7 +15,7 @@ const LocalConfig$json = const {
     const {'1': 'device', '3': 1, '4': 1, '5': 11, '6': '.Config.DeviceConfig', '10': 'device'},
     const {'1': 'position', '3': 2, '4': 1, '5': 11, '6': '.Config.PositionConfig', '10': 'position'},
     const {'1': 'power', '3': 3, '4': 1, '5': 11, '6': '.Config.PowerConfig', '10': 'power'},
-    const {'1': 'wifi', '3': 4, '4': 1, '5': 11, '6': '.Config.WiFiConfig', '10': 'wifi'},
+    const {'1': 'network', '3': 4, '4': 1, '5': 11, '6': '.Config.NetworkConfig', '10': 'network'},
     const {'1': 'display', '3': 5, '4': 1, '5': 11, '6': '.Config.DisplayConfig', '10': 'display'},
     const {'1': 'lora', '3': 6, '4': 1, '5': 11, '6': '.Config.LoRaConfig', '10': 'lora'},
     const {'1': 'bluetooth', '3': 7, '4': 1, '5': 11, '6': '.Config.BluetoothConfig', '10': 'bluetooth'},
@@ -24,7 +24,7 @@ const LocalConfig$json = const {
 };
 
 /// Descriptor for `LocalConfig`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List localConfigDescriptor = $convert.base64Decode('CgtMb2NhbENvbmZpZxIsCgZkZXZpY2UYASABKAsyFC5Db25maWcuRGV2aWNlQ29uZmlnUgZkZXZpY2USMgoIcG9zaXRpb24YAiABKAsyFi5Db25maWcuUG9zaXRpb25Db25maWdSCHBvc2l0aW9uEikKBXBvd2VyGAMgASgLMhMuQ29uZmlnLlBvd2VyQ29uZmlnUgVwb3dlchImCgR3aWZpGAQgASgLMhIuQ29uZmlnLldpRmlDb25maWdSBHdpZmkSLwoHZGlzcGxheRgFIAEoCzIVLkNvbmZpZy5EaXNwbGF5Q29uZmlnUgdkaXNwbGF5EiYKBGxvcmEYBiABKAsyEi5Db25maWcuTG9SYUNvbmZpZ1IEbG9yYRI1CglibHVldG9vdGgYByABKAsyFy5Db25maWcuQmx1ZXRvb3RoQ29uZmlnUglibHVldG9vdGgSGAoHdmVyc2lvbhgIIAEoDVIHdmVyc2lvbg==');
+final $typed_data.Uint8List localConfigDescriptor = $convert.base64Decode('CgtMb2NhbENvbmZpZxIsCgZkZXZpY2UYASABKAsyFC5Db25maWcuRGV2aWNlQ29uZmlnUgZkZXZpY2USMgoIcG9zaXRpb24YAiABKAsyFi5Db25maWcuUG9zaXRpb25Db25maWdSCHBvc2l0aW9uEikKBXBvd2VyGAMgASgLMhMuQ29uZmlnLlBvd2VyQ29uZmlnUgVwb3dlchIvCgduZXR3b3JrGAQgASgLMhUuQ29uZmlnLk5ldHdvcmtDb25maWdSB25ldHdvcmsSLwoHZGlzcGxheRgFIAEoCzIVLkNvbmZpZy5EaXNwbGF5Q29uZmlnUgdkaXNwbGF5EiYKBGxvcmEYBiABKAsyEi5Db25maWcuTG9SYUNvbmZpZ1IEbG9yYRI1CglibHVldG9vdGgYByABKAsyFy5Db25maWcuQmx1ZXRvb3RoQ29uZmlnUglibHVldG9vdGgSGAoHdmVyc2lvbhgIIAEoDVIHdmVyc2lvbg==');
 @$core.Deprecated('Use localModuleConfigDescriptor instead')
 const LocalModuleConfig$json = const {
   '1': 'LocalModuleConfig',

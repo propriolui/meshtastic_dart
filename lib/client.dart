@@ -1,8 +1,15 @@
-import 'package:meshtastic_dart/http/http_connection.dart';
+import 'package:meshtastic_dart/bluetooth/bluetooth_connection.dart';
+
+import './http/http_connection.dart';
 
 class Client {
-  HTTPConnection createHTTPConnection(int? confId, String url) {
-    final HTTPConnection http = HTTPConnection(confId, url);
+  HTTPConnection createHTTPConnection({confId}) {
+    final HTTPConnection http = HTTPConnection(confId: confId);
     return http;
+  }
+
+  BluetoothConnection createBluetoothConnection({confId}) {
+    final BluetoothConnection bluetooth = BluetoothConnection(confId: confId);
+    return bluetooth;
   }
 }

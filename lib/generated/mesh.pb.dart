@@ -12,9 +12,10 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'telemetry.pb.dart' as $0;
 import 'config.pb.dart' as $1;
 import 'module_config.pb.dart' as $2;
+import 'channel.pb.dart' as $3;
 
 import 'mesh.pbenum.dart';
-import 'portnums.pbenum.dart' as $3;
+import 'portnums.pbenum.dart' as $4;
 
 export 'mesh.pbenum.dart';
 
@@ -23,25 +24,25 @@ class Position extends $pb.GeneratedMessage {
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'latitudeI', $pb.PbFieldType.OSF3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'longitudeI', $pb.PbFieldType.OSF3)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitude', $pb.PbFieldType.O3)
-    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', $pb.PbFieldType.OF3)
-    ..e<Position_LocSource>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locationSource', $pb.PbFieldType.OE, defaultOrMaker: Position_LocSource.LOCSRC_UNSPECIFIED, valueOf: Position_LocSource.valueOf, enumValues: Position_LocSource.values)
-    ..e<Position_AltSource>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeSource', $pb.PbFieldType.OE, defaultOrMaker: Position_AltSource.ALTSRC_UNSPECIFIED, valueOf: Position_AltSource.valueOf, enumValues: Position_AltSource.values)
-    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'posTimestamp', $pb.PbFieldType.OF3)
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'posTimeMillis', $pb.PbFieldType.O3)
-    ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeHae', $pb.PbFieldType.OS3)
-    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altGeoidSep', $pb.PbFieldType.OS3)
-    ..a<$core.int>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PDOP', $pb.PbFieldType.OU3, protoName: 'PDOP')
-    ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'HDOP', $pb.PbFieldType.OU3, protoName: 'HDOP')
-    ..a<$core.int>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'VDOP', $pb.PbFieldType.OU3, protoName: 'VDOP')
-    ..a<$core.int>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gpsAccuracy', $pb.PbFieldType.OU3)
-    ..a<$core.int>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groundSpeed', $pb.PbFieldType.OU3)
-    ..a<$core.int>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groundTrack', $pb.PbFieldType.OU3)
-    ..a<$core.int>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fixQuality', $pb.PbFieldType.OU3)
-    ..a<$core.int>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fixType', $pb.PbFieldType.OU3)
-    ..a<$core.int>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'satsInView', $pb.PbFieldType.OU3)
-    ..a<$core.int>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sensorId', $pb.PbFieldType.OU3)
-    ..a<$core.int>(40, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'posNextUpdate', $pb.PbFieldType.OU3)
-    ..a<$core.int>(41, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'posSeqNumber', $pb.PbFieldType.OU3)
+    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', $pb.PbFieldType.OF3)
+    ..e<Position_LocSource>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locationSource', $pb.PbFieldType.OE, defaultOrMaker: Position_LocSource.LOC_UNSET, valueOf: Position_LocSource.valueOf, enumValues: Position_LocSource.values)
+    ..e<Position_AltSource>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeSource', $pb.PbFieldType.OE, defaultOrMaker: Position_AltSource.ALT_UNSET, valueOf: Position_AltSource.valueOf, enumValues: Position_AltSource.values)
+    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp', $pb.PbFieldType.OF3)
+    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestampMillisAdjust', $pb.PbFieldType.O3)
+    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeHae', $pb.PbFieldType.OS3)
+    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'altitudeGeoidalSeparation', $pb.PbFieldType.OS3)
+    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'PDOP', $pb.PbFieldType.OU3, protoName: 'PDOP')
+    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'HDOP', $pb.PbFieldType.OU3, protoName: 'HDOP')
+    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'VDOP', $pb.PbFieldType.OU3, protoName: 'VDOP')
+    ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gpsAccuracy', $pb.PbFieldType.OU3)
+    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groundSpeed', $pb.PbFieldType.OU3)
+    ..a<$core.int>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'groundTrack', $pb.PbFieldType.OU3)
+    ..a<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fixQuality', $pb.PbFieldType.OU3)
+    ..a<$core.int>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fixType', $pb.PbFieldType.OU3)
+    ..a<$core.int>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'satsInView', $pb.PbFieldType.OU3)
+    ..a<$core.int>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sensorId', $pb.PbFieldType.OU3)
+    ..a<$core.int>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nextUpdate', $pb.PbFieldType.OU3)
+    ..a<$core.int>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'seqNumber', $pb.PbFieldType.OU3)
     ..hasRequiredFields = false
   ;
 
@@ -53,10 +54,10 @@ class Position extends $pb.GeneratedMessage {
     $core.int? time,
     Position_LocSource? locationSource,
     Position_AltSource? altitudeSource,
-    $core.int? posTimestamp,
-    $core.int? posTimeMillis,
+    $core.int? timestamp,
+    $core.int? timestampMillisAdjust,
     $core.int? altitudeHae,
-    $core.int? altGeoidSep,
+    $core.int? altitudeGeoidalSeparation,
     $core.int? pDOP,
     $core.int? hDOP,
     $core.int? vDOP,
@@ -67,8 +68,8 @@ class Position extends $pb.GeneratedMessage {
     $core.int? fixType,
     $core.int? satsInView,
     $core.int? sensorId,
-    $core.int? posNextUpdate,
-    $core.int? posSeqNumber,
+    $core.int? nextUpdate,
+    $core.int? seqNumber,
   }) {
     final _result = create();
     if (latitudeI != null) {
@@ -89,17 +90,17 @@ class Position extends $pb.GeneratedMessage {
     if (altitudeSource != null) {
       _result.altitudeSource = altitudeSource;
     }
-    if (posTimestamp != null) {
-      _result.posTimestamp = posTimestamp;
+    if (timestamp != null) {
+      _result.timestamp = timestamp;
     }
-    if (posTimeMillis != null) {
-      _result.posTimeMillis = posTimeMillis;
+    if (timestampMillisAdjust != null) {
+      _result.timestampMillisAdjust = timestampMillisAdjust;
     }
     if (altitudeHae != null) {
       _result.altitudeHae = altitudeHae;
     }
-    if (altGeoidSep != null) {
-      _result.altGeoidSep = altGeoidSep;
+    if (altitudeGeoidalSeparation != null) {
+      _result.altitudeGeoidalSeparation = altitudeGeoidalSeparation;
     }
     if (pDOP != null) {
       _result.pDOP = pDOP;
@@ -131,11 +132,11 @@ class Position extends $pb.GeneratedMessage {
     if (sensorId != null) {
       _result.sensorId = sensorId;
     }
-    if (posNextUpdate != null) {
-      _result.posNextUpdate = posNextUpdate;
+    if (nextUpdate != null) {
+      _result.nextUpdate = nextUpdate;
     }
-    if (posSeqNumber != null) {
-      _result.posSeqNumber = posSeqNumber;
+    if (seqNumber != null) {
+      _result.seqNumber = seqNumber;
     }
     return _result;
   }
@@ -187,176 +188,176 @@ class Position extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAltitude() => clearField(3);
 
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(4)
   $core.int get time => $_getIZ(3);
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(4)
   set time($core.int v) { $_setUnsignedInt32(3, v); }
-  @$pb.TagNumber(9)
+  @$pb.TagNumber(4)
   $core.bool hasTime() => $_has(3);
-  @$pb.TagNumber(9)
-  void clearTime() => clearField(9);
+  @$pb.TagNumber(4)
+  void clearTime() => clearField(4);
 
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(5)
   Position_LocSource get locationSource => $_getN(4);
-  @$pb.TagNumber(10)
-  set locationSource(Position_LocSource v) { setField(10, v); }
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(5)
+  set locationSource(Position_LocSource v) { setField(5, v); }
+  @$pb.TagNumber(5)
   $core.bool hasLocationSource() => $_has(4);
-  @$pb.TagNumber(10)
-  void clearLocationSource() => clearField(10);
+  @$pb.TagNumber(5)
+  void clearLocationSource() => clearField(5);
 
-  @$pb.TagNumber(11)
+  @$pb.TagNumber(6)
   Position_AltSource get altitudeSource => $_getN(5);
-  @$pb.TagNumber(11)
-  set altitudeSource(Position_AltSource v) { setField(11, v); }
-  @$pb.TagNumber(11)
+  @$pb.TagNumber(6)
+  set altitudeSource(Position_AltSource v) { setField(6, v); }
+  @$pb.TagNumber(6)
   $core.bool hasAltitudeSource() => $_has(5);
-  @$pb.TagNumber(11)
-  void clearAltitudeSource() => clearField(11);
+  @$pb.TagNumber(6)
+  void clearAltitudeSource() => clearField(6);
 
-  @$pb.TagNumber(12)
-  $core.int get posTimestamp => $_getIZ(6);
-  @$pb.TagNumber(12)
-  set posTimestamp($core.int v) { $_setUnsignedInt32(6, v); }
-  @$pb.TagNumber(12)
-  $core.bool hasPosTimestamp() => $_has(6);
-  @$pb.TagNumber(12)
-  void clearPosTimestamp() => clearField(12);
+  @$pb.TagNumber(7)
+  $core.int get timestamp => $_getIZ(6);
+  @$pb.TagNumber(7)
+  set timestamp($core.int v) { $_setUnsignedInt32(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasTimestamp() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearTimestamp() => clearField(7);
 
-  @$pb.TagNumber(13)
-  $core.int get posTimeMillis => $_getIZ(7);
-  @$pb.TagNumber(13)
-  set posTimeMillis($core.int v) { $_setSignedInt32(7, v); }
-  @$pb.TagNumber(13)
-  $core.bool hasPosTimeMillis() => $_has(7);
-  @$pb.TagNumber(13)
-  void clearPosTimeMillis() => clearField(13);
+  @$pb.TagNumber(8)
+  $core.int get timestampMillisAdjust => $_getIZ(7);
+  @$pb.TagNumber(8)
+  set timestampMillisAdjust($core.int v) { $_setSignedInt32(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasTimestampMillisAdjust() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearTimestampMillisAdjust() => clearField(8);
 
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(9)
   $core.int get altitudeHae => $_getIZ(8);
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(9)
   set altitudeHae($core.int v) { $_setSignedInt32(8, v); }
-  @$pb.TagNumber(14)
+  @$pb.TagNumber(9)
   $core.bool hasAltitudeHae() => $_has(8);
-  @$pb.TagNumber(14)
-  void clearAltitudeHae() => clearField(14);
+  @$pb.TagNumber(9)
+  void clearAltitudeHae() => clearField(9);
 
-  @$pb.TagNumber(15)
-  $core.int get altGeoidSep => $_getIZ(9);
-  @$pb.TagNumber(15)
-  set altGeoidSep($core.int v) { $_setSignedInt32(9, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasAltGeoidSep() => $_has(9);
-  @$pb.TagNumber(15)
-  void clearAltGeoidSep() => clearField(15);
+  @$pb.TagNumber(10)
+  $core.int get altitudeGeoidalSeparation => $_getIZ(9);
+  @$pb.TagNumber(10)
+  set altitudeGeoidalSeparation($core.int v) { $_setSignedInt32(9, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasAltitudeGeoidalSeparation() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearAltitudeGeoidalSeparation() => clearField(10);
 
-  @$pb.TagNumber(16)
+  @$pb.TagNumber(11)
   $core.int get pDOP => $_getIZ(10);
-  @$pb.TagNumber(16)
+  @$pb.TagNumber(11)
   set pDOP($core.int v) { $_setUnsignedInt32(10, v); }
-  @$pb.TagNumber(16)
+  @$pb.TagNumber(11)
   $core.bool hasPDOP() => $_has(10);
-  @$pb.TagNumber(16)
-  void clearPDOP() => clearField(16);
+  @$pb.TagNumber(11)
+  void clearPDOP() => clearField(11);
 
-  @$pb.TagNumber(17)
+  @$pb.TagNumber(12)
   $core.int get hDOP => $_getIZ(11);
-  @$pb.TagNumber(17)
+  @$pb.TagNumber(12)
   set hDOP($core.int v) { $_setUnsignedInt32(11, v); }
-  @$pb.TagNumber(17)
+  @$pb.TagNumber(12)
   $core.bool hasHDOP() => $_has(11);
-  @$pb.TagNumber(17)
-  void clearHDOP() => clearField(17);
+  @$pb.TagNumber(12)
+  void clearHDOP() => clearField(12);
 
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(13)
   $core.int get vDOP => $_getIZ(12);
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(13)
   set vDOP($core.int v) { $_setUnsignedInt32(12, v); }
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(13)
   $core.bool hasVDOP() => $_has(12);
-  @$pb.TagNumber(18)
-  void clearVDOP() => clearField(18);
+  @$pb.TagNumber(13)
+  void clearVDOP() => clearField(13);
 
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(14)
   $core.int get gpsAccuracy => $_getIZ(13);
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(14)
   set gpsAccuracy($core.int v) { $_setUnsignedInt32(13, v); }
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(14)
   $core.bool hasGpsAccuracy() => $_has(13);
-  @$pb.TagNumber(19)
-  void clearGpsAccuracy() => clearField(19);
+  @$pb.TagNumber(14)
+  void clearGpsAccuracy() => clearField(14);
 
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(15)
   $core.int get groundSpeed => $_getIZ(14);
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(15)
   set groundSpeed($core.int v) { $_setUnsignedInt32(14, v); }
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(15)
   $core.bool hasGroundSpeed() => $_has(14);
-  @$pb.TagNumber(20)
-  void clearGroundSpeed() => clearField(20);
+  @$pb.TagNumber(15)
+  void clearGroundSpeed() => clearField(15);
 
-  @$pb.TagNumber(21)
+  @$pb.TagNumber(16)
   $core.int get groundTrack => $_getIZ(15);
-  @$pb.TagNumber(21)
+  @$pb.TagNumber(16)
   set groundTrack($core.int v) { $_setUnsignedInt32(15, v); }
-  @$pb.TagNumber(21)
+  @$pb.TagNumber(16)
   $core.bool hasGroundTrack() => $_has(15);
-  @$pb.TagNumber(21)
-  void clearGroundTrack() => clearField(21);
+  @$pb.TagNumber(16)
+  void clearGroundTrack() => clearField(16);
 
-  @$pb.TagNumber(22)
+  @$pb.TagNumber(17)
   $core.int get fixQuality => $_getIZ(16);
-  @$pb.TagNumber(22)
+  @$pb.TagNumber(17)
   set fixQuality($core.int v) { $_setUnsignedInt32(16, v); }
-  @$pb.TagNumber(22)
+  @$pb.TagNumber(17)
   $core.bool hasFixQuality() => $_has(16);
-  @$pb.TagNumber(22)
-  void clearFixQuality() => clearField(22);
+  @$pb.TagNumber(17)
+  void clearFixQuality() => clearField(17);
 
-  @$pb.TagNumber(23)
+  @$pb.TagNumber(18)
   $core.int get fixType => $_getIZ(17);
-  @$pb.TagNumber(23)
+  @$pb.TagNumber(18)
   set fixType($core.int v) { $_setUnsignedInt32(17, v); }
-  @$pb.TagNumber(23)
+  @$pb.TagNumber(18)
   $core.bool hasFixType() => $_has(17);
-  @$pb.TagNumber(23)
-  void clearFixType() => clearField(23);
+  @$pb.TagNumber(18)
+  void clearFixType() => clearField(18);
 
-  @$pb.TagNumber(24)
+  @$pb.TagNumber(19)
   $core.int get satsInView => $_getIZ(18);
-  @$pb.TagNumber(24)
+  @$pb.TagNumber(19)
   set satsInView($core.int v) { $_setUnsignedInt32(18, v); }
-  @$pb.TagNumber(24)
+  @$pb.TagNumber(19)
   $core.bool hasSatsInView() => $_has(18);
-  @$pb.TagNumber(24)
-  void clearSatsInView() => clearField(24);
+  @$pb.TagNumber(19)
+  void clearSatsInView() => clearField(19);
 
-  @$pb.TagNumber(25)
+  @$pb.TagNumber(20)
   $core.int get sensorId => $_getIZ(19);
-  @$pb.TagNumber(25)
+  @$pb.TagNumber(20)
   set sensorId($core.int v) { $_setUnsignedInt32(19, v); }
-  @$pb.TagNumber(25)
+  @$pb.TagNumber(20)
   $core.bool hasSensorId() => $_has(19);
-  @$pb.TagNumber(25)
-  void clearSensorId() => clearField(25);
+  @$pb.TagNumber(20)
+  void clearSensorId() => clearField(20);
 
-  @$pb.TagNumber(40)
-  $core.int get posNextUpdate => $_getIZ(20);
-  @$pb.TagNumber(40)
-  set posNextUpdate($core.int v) { $_setUnsignedInt32(20, v); }
-  @$pb.TagNumber(40)
-  $core.bool hasPosNextUpdate() => $_has(20);
-  @$pb.TagNumber(40)
-  void clearPosNextUpdate() => clearField(40);
+  @$pb.TagNumber(21)
+  $core.int get nextUpdate => $_getIZ(20);
+  @$pb.TagNumber(21)
+  set nextUpdate($core.int v) { $_setUnsignedInt32(20, v); }
+  @$pb.TagNumber(21)
+  $core.bool hasNextUpdate() => $_has(20);
+  @$pb.TagNumber(21)
+  void clearNextUpdate() => clearField(21);
 
-  @$pb.TagNumber(41)
-  $core.int get posSeqNumber => $_getIZ(21);
-  @$pb.TagNumber(41)
-  set posSeqNumber($core.int v) { $_setUnsignedInt32(21, v); }
-  @$pb.TagNumber(41)
-  $core.bool hasPosSeqNumber() => $_has(21);
-  @$pb.TagNumber(41)
-  void clearPosSeqNumber() => clearField(41);
+  @$pb.TagNumber(22)
+  $core.int get seqNumber => $_getIZ(21);
+  @$pb.TagNumber(22)
+  set seqNumber($core.int v) { $_setUnsignedInt32(21, v); }
+  @$pb.TagNumber(22)
+  $core.bool hasSeqNumber() => $_has(21);
+  @$pb.TagNumber(22)
+  void clearSeqNumber() => clearField(22);
 }
 
 class User extends $pb.GeneratedMessage {
@@ -365,8 +366,8 @@ class User extends $pb.GeneratedMessage {
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'longName')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'shortName')
     ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'macaddr', $pb.PbFieldType.OY)
-    ..e<HardwareModel>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hwModel', $pb.PbFieldType.OE, defaultOrMaker: HardwareModel.UNSET, valueOf: HardwareModel.valueOf, enumValues: HardwareModel.values)
-    ..aOB(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isLicensed')
+    ..e<HardwareModel>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hwModel', $pb.PbFieldType.OE, defaultOrMaker: HardwareModel.UNSET, valueOf: HardwareModel.valueOf, enumValues: HardwareModel.values)
+    ..aOB(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'isLicensed')
     ..hasRequiredFields = false
   ;
 
@@ -457,28 +458,28 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearMacaddr() => clearField(4);
 
-  @$pb.TagNumber(6)
+  @$pb.TagNumber(5)
   HardwareModel get hwModel => $_getN(4);
-  @$pb.TagNumber(6)
-  set hwModel(HardwareModel v) { setField(6, v); }
-  @$pb.TagNumber(6)
+  @$pb.TagNumber(5)
+  set hwModel(HardwareModel v) { setField(5, v); }
+  @$pb.TagNumber(5)
   $core.bool hasHwModel() => $_has(4);
-  @$pb.TagNumber(6)
-  void clearHwModel() => clearField(6);
+  @$pb.TagNumber(5)
+  void clearHwModel() => clearField(5);
 
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   $core.bool get isLicensed => $_getBF(5);
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   set isLicensed($core.bool v) { $_setBool(5, v); }
-  @$pb.TagNumber(7)
+  @$pb.TagNumber(6)
   $core.bool hasIsLicensed() => $_has(5);
-  @$pb.TagNumber(7)
-  void clearIsLicensed() => clearField(7);
+  @$pb.TagNumber(6)
+  void clearIsLicensed() => clearField(6);
 }
 
 class RouteDiscovery extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RouteDiscovery', createEmptyInstance: create)
-    ..p<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'route', $pb.PbFieldType.KF3)
+    ..p<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'route', $pb.PbFieldType.KF3)
     ..hasRequiredFields = false
   ;
 
@@ -513,7 +514,7 @@ class RouteDiscovery extends $pb.GeneratedMessage {
   static RouteDiscovery getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RouteDiscovery>(create);
   static RouteDiscovery? _defaultInstance;
 
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   $core.List<$core.int> get route => $_getList(0);
 }
 
@@ -615,7 +616,7 @@ class Routing extends $pb.GeneratedMessage {
 
 class Data extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Data', createEmptyInstance: create)
-    ..e<$3.PortNum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'portnum', $pb.PbFieldType.OE, defaultOrMaker: $3.PortNum.UNKNOWN_APP, valueOf: $3.PortNum.valueOf, enumValues: $3.PortNum.values)
+    ..e<$4.PortNum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'portnum', $pb.PbFieldType.OE, defaultOrMaker: $4.PortNum.UNKNOWN_APP, valueOf: $4.PortNum.valueOf, enumValues: $4.PortNum.values)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', $pb.PbFieldType.OY)
     ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wantResponse')
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'dest', $pb.PbFieldType.OF3)
@@ -628,7 +629,7 @@ class Data extends $pb.GeneratedMessage {
 
   Data._() : super();
   factory Data({
-    $3.PortNum? portnum,
+    $4.PortNum? portnum,
     $core.List<$core.int>? payload,
     $core.bool? wantResponse,
     $core.int? dest,
@@ -686,9 +687,9 @@ class Data extends $pb.GeneratedMessage {
   static Data? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $3.PortNum get portnum => $_getN(0);
+  $4.PortNum get portnum => $_getN(0);
   @$pb.TagNumber(1)
-  set portnum($3.PortNum v) { setField(1, v); }
+  set portnum($4.PortNum v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPortnum() => $_has(0);
   @$pb.TagNumber(1)
@@ -911,11 +912,11 @@ class MeshPacket extends $pb.GeneratedMessage {
     ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OF3)
     ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxTime', $pb.PbFieldType.OF3)
     ..a<$core.double>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxSnr', $pb.PbFieldType.OF)
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hopLimit', $pb.PbFieldType.OU3)
-    ..aOB(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wantAck')
-    ..e<MeshPacket_Priority>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'priority', $pb.PbFieldType.OE, defaultOrMaker: MeshPacket_Priority.UNSET, valueOf: MeshPacket_Priority.valueOf, enumValues: MeshPacket_Priority.values)
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxRssi', $pb.PbFieldType.O3)
-    ..e<MeshPacket_Delayed>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delayed', $pb.PbFieldType.OE, defaultOrMaker: MeshPacket_Delayed.NO_DELAY, valueOf: MeshPacket_Delayed.valueOf, enumValues: MeshPacket_Delayed.values)
+    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hopLimit', $pb.PbFieldType.OU3)
+    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wantAck')
+    ..e<MeshPacket_Priority>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'priority', $pb.PbFieldType.OE, defaultOrMaker: MeshPacket_Priority.UNSET, valueOf: MeshPacket_Priority.valueOf, enumValues: MeshPacket_Priority.values)
+    ..a<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rxRssi', $pb.PbFieldType.O3)
+    ..e<MeshPacket_Delayed>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delayed', $pb.PbFieldType.OE, defaultOrMaker: MeshPacket_Delayed.NO_DELAY, valueOf: MeshPacket_Delayed.valueOf, enumValues: MeshPacket_Delayed.values)
     ..hasRequiredFields = false
   ;
 
@@ -1075,50 +1076,50 @@ class MeshPacket extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearRxSnr() => clearField(8);
 
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(9)
   $core.int get hopLimit => $_getIZ(8);
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(9)
   set hopLimit($core.int v) { $_setUnsignedInt32(8, v); }
-  @$pb.TagNumber(10)
+  @$pb.TagNumber(9)
   $core.bool hasHopLimit() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearHopLimit() => clearField(9);
+
   @$pb.TagNumber(10)
-  void clearHopLimit() => clearField(10);
-
-  @$pb.TagNumber(11)
   $core.bool get wantAck => $_getBF(9);
-  @$pb.TagNumber(11)
+  @$pb.TagNumber(10)
   set wantAck($core.bool v) { $_setBool(9, v); }
-  @$pb.TagNumber(11)
+  @$pb.TagNumber(10)
   $core.bool hasWantAck() => $_has(9);
+  @$pb.TagNumber(10)
+  void clearWantAck() => clearField(10);
+
   @$pb.TagNumber(11)
-  void clearWantAck() => clearField(11);
-
-  @$pb.TagNumber(12)
   MeshPacket_Priority get priority => $_getN(10);
-  @$pb.TagNumber(12)
-  set priority(MeshPacket_Priority v) { setField(12, v); }
-  @$pb.TagNumber(12)
+  @$pb.TagNumber(11)
+  set priority(MeshPacket_Priority v) { setField(11, v); }
+  @$pb.TagNumber(11)
   $core.bool hasPriority() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearPriority() => clearField(11);
+
   @$pb.TagNumber(12)
-  void clearPriority() => clearField(12);
-
-  @$pb.TagNumber(13)
   $core.int get rxRssi => $_getIZ(11);
-  @$pb.TagNumber(13)
+  @$pb.TagNumber(12)
   set rxRssi($core.int v) { $_setSignedInt32(11, v); }
-  @$pb.TagNumber(13)
+  @$pb.TagNumber(12)
   $core.bool hasRxRssi() => $_has(11);
-  @$pb.TagNumber(13)
-  void clearRxRssi() => clearField(13);
+  @$pb.TagNumber(12)
+  void clearRxRssi() => clearField(12);
 
-  @$pb.TagNumber(15)
+  @$pb.TagNumber(13)
   MeshPacket_Delayed get delayed => $_getN(12);
-  @$pb.TagNumber(15)
-  set delayed(MeshPacket_Delayed v) { setField(15, v); }
-  @$pb.TagNumber(15)
+  @$pb.TagNumber(13)
+  set delayed(MeshPacket_Delayed v) { setField(13, v); }
+  @$pb.TagNumber(13)
   $core.bool hasDelayed() => $_has(12);
-  @$pb.TagNumber(15)
-  void clearDelayed() => clearField(15);
+  @$pb.TagNumber(13)
+  void clearDelayed() => clearField(13);
 }
 
 class NodeInfo extends $pb.GeneratedMessage {
@@ -1248,20 +1249,20 @@ class MyNodeInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MyNodeInfo', createEmptyInstance: create)
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'myNodeNum', $pb.PbFieldType.OU3)
     ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasGps')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firmwareVersion')
-    ..e<CriticalErrorCode>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCode', $pb.PbFieldType.OE, defaultOrMaker: CriticalErrorCode.None, valueOf: CriticalErrorCode.valueOf, enumValues: CriticalErrorCode.values)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorAddress', $pb.PbFieldType.OU3)
-    ..a<$core.int>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCount', $pb.PbFieldType.OU3)
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rebootCount', $pb.PbFieldType.OU3)
-    ..a<$core.double>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bitrate', $pb.PbFieldType.OF)
-    ..a<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageTimeoutMsec', $pb.PbFieldType.OU3)
-    ..a<$core.int>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minAppVersion', $pb.PbFieldType.OU3)
-    ..a<$core.int>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxChannels', $pb.PbFieldType.OU3)
-    ..p<$core.int>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airPeriodTx', $pb.PbFieldType.KU3)
-    ..p<$core.int>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airPeriodRx', $pb.PbFieldType.KU3)
-    ..aOB(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasWifi')
-    ..a<$core.double>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelUtilization', $pb.PbFieldType.OF)
-    ..a<$core.double>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airUtilTx', $pb.PbFieldType.OF)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxChannels', $pb.PbFieldType.OU3)
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firmwareVersion')
+    ..e<CriticalErrorCode>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCode', $pb.PbFieldType.OE, defaultOrMaker: CriticalErrorCode.NONE, valueOf: CriticalErrorCode.valueOf, enumValues: CriticalErrorCode.values)
+    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorAddress', $pb.PbFieldType.OU3)
+    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorCount', $pb.PbFieldType.OU3)
+    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rebootCount', $pb.PbFieldType.OU3)
+    ..a<$core.double>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bitrate', $pb.PbFieldType.OF)
+    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messageTimeoutMsec', $pb.PbFieldType.OU3)
+    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minAppVersion', $pb.PbFieldType.OU3)
+    ..p<$core.int>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airPeriodTx', $pb.PbFieldType.KU3)
+    ..p<$core.int>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airPeriodRx', $pb.PbFieldType.KU3)
+    ..aOB(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hasWifi')
+    ..a<$core.double>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channelUtilization', $pb.PbFieldType.OF)
+    ..a<$core.double>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'airUtilTx', $pb.PbFieldType.OF)
     ..hasRequiredFields = false
   ;
 
@@ -1269,6 +1270,7 @@ class MyNodeInfo extends $pb.GeneratedMessage {
   factory MyNodeInfo({
     $core.int? myNodeNum,
     $core.bool? hasGps,
+    $core.int? maxChannels,
     $core.String? firmwareVersion,
     CriticalErrorCode? errorCode,
     $core.int? errorAddress,
@@ -1277,7 +1279,6 @@ class MyNodeInfo extends $pb.GeneratedMessage {
     $core.double? bitrate,
     $core.int? messageTimeoutMsec,
     $core.int? minAppVersion,
-    $core.int? maxChannels,
     $core.Iterable<$core.int>? airPeriodTx,
     $core.Iterable<$core.int>? airPeriodRx,
     $core.bool? hasWifi,
@@ -1290,6 +1291,9 @@ class MyNodeInfo extends $pb.GeneratedMessage {
     }
     if (hasGps != null) {
       _result.hasGps = hasGps;
+    }
+    if (maxChannels != null) {
+      _result.maxChannels = maxChannels;
     }
     if (firmwareVersion != null) {
       _result.firmwareVersion = firmwareVersion;
@@ -1314,9 +1318,6 @@ class MyNodeInfo extends $pb.GeneratedMessage {
     }
     if (minAppVersion != null) {
       _result.minAppVersion = minAppVersion;
-    }
-    if (maxChannels != null) {
-      _result.maxChannels = maxChannels;
     }
     if (airPeriodTx != null) {
       _result.airPeriodTx.addAll(airPeriodTx);
@@ -1374,119 +1375,119 @@ class MyNodeInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearHasGps() => clearField(2);
 
+  @$pb.TagNumber(3)
+  $core.int get maxChannels => $_getIZ(2);
+  @$pb.TagNumber(3)
+  set maxChannels($core.int v) { $_setUnsignedInt32(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasMaxChannels() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearMaxChannels() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get firmwareVersion => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set firmwareVersion($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasFirmwareVersion() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearFirmwareVersion() => clearField(4);
+
+  @$pb.TagNumber(5)
+  CriticalErrorCode get errorCode => $_getN(4);
+  @$pb.TagNumber(5)
+  set errorCode(CriticalErrorCode v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasErrorCode() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearErrorCode() => clearField(5);
+
   @$pb.TagNumber(6)
-  $core.String get firmwareVersion => $_getSZ(2);
+  $core.int get errorAddress => $_getIZ(5);
   @$pb.TagNumber(6)
-  set firmwareVersion($core.String v) { $_setString(2, v); }
+  set errorAddress($core.int v) { $_setUnsignedInt32(5, v); }
   @$pb.TagNumber(6)
-  $core.bool hasFirmwareVersion() => $_has(2);
+  $core.bool hasErrorAddress() => $_has(5);
   @$pb.TagNumber(6)
-  void clearFirmwareVersion() => clearField(6);
+  void clearErrorAddress() => clearField(6);
 
   @$pb.TagNumber(7)
-  CriticalErrorCode get errorCode => $_getN(3);
+  $core.int get errorCount => $_getIZ(6);
   @$pb.TagNumber(7)
-  set errorCode(CriticalErrorCode v) { setField(7, v); }
+  set errorCount($core.int v) { $_setUnsignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasErrorCode() => $_has(3);
+  $core.bool hasErrorCount() => $_has(6);
   @$pb.TagNumber(7)
-  void clearErrorCode() => clearField(7);
+  void clearErrorCount() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.int get errorAddress => $_getIZ(4);
+  $core.int get rebootCount => $_getIZ(7);
   @$pb.TagNumber(8)
-  set errorAddress($core.int v) { $_setUnsignedInt32(4, v); }
+  set rebootCount($core.int v) { $_setUnsignedInt32(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasErrorAddress() => $_has(4);
+  $core.bool hasRebootCount() => $_has(7);
   @$pb.TagNumber(8)
-  void clearErrorAddress() => clearField(8);
+  void clearRebootCount() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.int get errorCount => $_getIZ(5);
+  $core.double get bitrate => $_getN(8);
   @$pb.TagNumber(9)
-  set errorCount($core.int v) { $_setUnsignedInt32(5, v); }
+  set bitrate($core.double v) { $_setFloat(8, v); }
   @$pb.TagNumber(9)
-  $core.bool hasErrorCount() => $_has(5);
+  $core.bool hasBitrate() => $_has(8);
   @$pb.TagNumber(9)
-  void clearErrorCount() => clearField(9);
+  void clearBitrate() => clearField(9);
 
   @$pb.TagNumber(10)
-  $core.int get rebootCount => $_getIZ(6);
+  $core.int get messageTimeoutMsec => $_getIZ(9);
   @$pb.TagNumber(10)
-  set rebootCount($core.int v) { $_setUnsignedInt32(6, v); }
+  set messageTimeoutMsec($core.int v) { $_setUnsignedInt32(9, v); }
   @$pb.TagNumber(10)
-  $core.bool hasRebootCount() => $_has(6);
+  $core.bool hasMessageTimeoutMsec() => $_has(9);
   @$pb.TagNumber(10)
-  void clearRebootCount() => clearField(10);
+  void clearMessageTimeoutMsec() => clearField(10);
 
   @$pb.TagNumber(11)
-  $core.double get bitrate => $_getN(7);
+  $core.int get minAppVersion => $_getIZ(10);
   @$pb.TagNumber(11)
-  set bitrate($core.double v) { $_setFloat(7, v); }
+  set minAppVersion($core.int v) { $_setUnsignedInt32(10, v); }
   @$pb.TagNumber(11)
-  $core.bool hasBitrate() => $_has(7);
+  $core.bool hasMinAppVersion() => $_has(10);
   @$pb.TagNumber(11)
-  void clearBitrate() => clearField(11);
+  void clearMinAppVersion() => clearField(11);
 
-  @$pb.TagNumber(13)
-  $core.int get messageTimeoutMsec => $_getIZ(8);
-  @$pb.TagNumber(13)
-  set messageTimeoutMsec($core.int v) { $_setUnsignedInt32(8, v); }
-  @$pb.TagNumber(13)
-  $core.bool hasMessageTimeoutMsec() => $_has(8);
-  @$pb.TagNumber(13)
-  void clearMessageTimeoutMsec() => clearField(13);
-
-  @$pb.TagNumber(14)
-  $core.int get minAppVersion => $_getIZ(9);
-  @$pb.TagNumber(14)
-  set minAppVersion($core.int v) { $_setUnsignedInt32(9, v); }
-  @$pb.TagNumber(14)
-  $core.bool hasMinAppVersion() => $_has(9);
-  @$pb.TagNumber(14)
-  void clearMinAppVersion() => clearField(14);
-
-  @$pb.TagNumber(15)
-  $core.int get maxChannels => $_getIZ(10);
-  @$pb.TagNumber(15)
-  set maxChannels($core.int v) { $_setUnsignedInt32(10, v); }
-  @$pb.TagNumber(15)
-  $core.bool hasMaxChannels() => $_has(10);
-  @$pb.TagNumber(15)
-  void clearMaxChannels() => clearField(15);
-
-  @$pb.TagNumber(16)
+  @$pb.TagNumber(12)
   $core.List<$core.int> get airPeriodTx => $_getList(11);
 
-  @$pb.TagNumber(17)
+  @$pb.TagNumber(13)
   $core.List<$core.int> get airPeriodRx => $_getList(12);
 
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(14)
   $core.bool get hasWifi => $_getBF(13);
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(14)
   set hasWifi($core.bool v) { $_setBool(13, v); }
-  @$pb.TagNumber(18)
+  @$pb.TagNumber(14)
   $core.bool hasHasWifi() => $_has(13);
-  @$pb.TagNumber(18)
-  void clearHasWifi() => clearField(18);
+  @$pb.TagNumber(14)
+  void clearHasWifi() => clearField(14);
 
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(15)
   $core.double get channelUtilization => $_getN(14);
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(15)
   set channelUtilization($core.double v) { $_setFloat(14, v); }
-  @$pb.TagNumber(19)
+  @$pb.TagNumber(15)
   $core.bool hasChannelUtilization() => $_has(14);
-  @$pb.TagNumber(19)
-  void clearChannelUtilization() => clearField(19);
+  @$pb.TagNumber(15)
+  void clearChannelUtilization() => clearField(15);
 
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(16)
   $core.double get airUtilTx => $_getN(15);
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(16)
   set airUtilTx($core.double v) { $_setFloat(15, v); }
-  @$pb.TagNumber(20)
+  @$pb.TagNumber(16)
   $core.bool hasAirUtilTx() => $_has(15);
-  @$pb.TagNumber(20)
-  void clearAirUtilTx() => clearField(20);
+  @$pb.TagNumber(16)
+  void clearAirUtilTx() => clearField(16);
 }
 
 class LogRecord extends $pb.GeneratedMessage {
@@ -1579,6 +1580,7 @@ class LogRecord extends $pb.GeneratedMessage {
 }
 
 enum FromRadio_PayloadVariant {
+  packet, 
   myInfo, 
   nodeInfo, 
   config, 
@@ -1586,39 +1588,42 @@ enum FromRadio_PayloadVariant {
   configCompleteId, 
   rebooted, 
   moduleConfig, 
-  packet, 
+  channel, 
   notSet
 }
 
 class FromRadio extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, FromRadio_PayloadVariant> _FromRadio_PayloadVariantByTag = {
+    2 : FromRadio_PayloadVariant.packet,
     3 : FromRadio_PayloadVariant.myInfo,
     4 : FromRadio_PayloadVariant.nodeInfo,
-    6 : FromRadio_PayloadVariant.config,
-    7 : FromRadio_PayloadVariant.logRecord,
-    8 : FromRadio_PayloadVariant.configCompleteId,
-    9 : FromRadio_PayloadVariant.rebooted,
-    10 : FromRadio_PayloadVariant.moduleConfig,
-    11 : FromRadio_PayloadVariant.packet,
+    5 : FromRadio_PayloadVariant.config,
+    6 : FromRadio_PayloadVariant.logRecord,
+    7 : FromRadio_PayloadVariant.configCompleteId,
+    8 : FromRadio_PayloadVariant.rebooted,
+    9 : FromRadio_PayloadVariant.moduleConfig,
+    10 : FromRadio_PayloadVariant.channel,
     0 : FromRadio_PayloadVariant.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'FromRadio', createEmptyInstance: create)
-    ..oo(0, [3, 4, 6, 7, 8, 9, 10, 11])
+    ..oo(0, [2, 3, 4, 5, 6, 7, 8, 9, 10])
     ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.OU3)
+    ..aOM<MeshPacket>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: MeshPacket.create)
     ..aOM<MyNodeInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'myInfo', subBuilder: MyNodeInfo.create)
     ..aOM<NodeInfo>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nodeInfo', subBuilder: NodeInfo.create)
-    ..aOM<$1.Config>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $1.Config.create)
-    ..aOM<LogRecord>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logRecord', subBuilder: LogRecord.create)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'configCompleteId', $pb.PbFieldType.OU3)
-    ..aOB(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rebooted')
-    ..aOM<$2.ModuleConfig>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'moduleConfig', protoName: 'moduleConfig', subBuilder: $2.ModuleConfig.create)
-    ..aOM<MeshPacket>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: MeshPacket.create)
+    ..aOM<$1.Config>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'config', subBuilder: $1.Config.create)
+    ..aOM<LogRecord>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'logRecord', subBuilder: LogRecord.create)
+    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'configCompleteId', $pb.PbFieldType.OU3)
+    ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rebooted')
+    ..aOM<$2.ModuleConfig>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'moduleConfig', protoName: 'moduleConfig', subBuilder: $2.ModuleConfig.create)
+    ..aOM<$3.Channel>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'channel', subBuilder: $3.Channel.create)
     ..hasRequiredFields = false
   ;
 
   FromRadio._() : super();
   factory FromRadio({
     $core.int? id,
+    MeshPacket? packet,
     MyNodeInfo? myInfo,
     NodeInfo? nodeInfo,
     $1.Config? config,
@@ -1626,11 +1631,14 @@ class FromRadio extends $pb.GeneratedMessage {
     $core.int? configCompleteId,
     $core.bool? rebooted,
     $2.ModuleConfig? moduleConfig,
-    MeshPacket? packet,
+    $3.Channel? channel,
   }) {
     final _result = create();
     if (id != null) {
       _result.id = id;
+    }
+    if (packet != null) {
+      _result.packet = packet;
     }
     if (myInfo != null) {
       _result.myInfo = myInfo;
@@ -1653,8 +1661,8 @@ class FromRadio extends $pb.GeneratedMessage {
     if (moduleConfig != null) {
       _result.moduleConfig = moduleConfig;
     }
-    if (packet != null) {
-      _result.packet = packet;
+    if (channel != null) {
+      _result.channel = channel;
     }
     return _result;
   }
@@ -1691,155 +1699,104 @@ class FromRadio extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearId() => clearField(1);
 
+  @$pb.TagNumber(2)
+  MeshPacket get packet => $_getN(1);
+  @$pb.TagNumber(2)
+  set packet(MeshPacket v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasPacket() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearPacket() => clearField(2);
+  @$pb.TagNumber(2)
+  MeshPacket ensurePacket() => $_ensure(1);
+
   @$pb.TagNumber(3)
-  MyNodeInfo get myInfo => $_getN(1);
+  MyNodeInfo get myInfo => $_getN(2);
   @$pb.TagNumber(3)
   set myInfo(MyNodeInfo v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasMyInfo() => $_has(1);
+  $core.bool hasMyInfo() => $_has(2);
   @$pb.TagNumber(3)
   void clearMyInfo() => clearField(3);
   @$pb.TagNumber(3)
-  MyNodeInfo ensureMyInfo() => $_ensure(1);
+  MyNodeInfo ensureMyInfo() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  NodeInfo get nodeInfo => $_getN(2);
+  NodeInfo get nodeInfo => $_getN(3);
   @$pb.TagNumber(4)
   set nodeInfo(NodeInfo v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasNodeInfo() => $_has(2);
+  $core.bool hasNodeInfo() => $_has(3);
   @$pb.TagNumber(4)
   void clearNodeInfo() => clearField(4);
   @$pb.TagNumber(4)
-  NodeInfo ensureNodeInfo() => $_ensure(2);
+  NodeInfo ensureNodeInfo() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $1.Config get config => $_getN(4);
+  @$pb.TagNumber(5)
+  set config($1.Config v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasConfig() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearConfig() => clearField(5);
+  @$pb.TagNumber(5)
+  $1.Config ensureConfig() => $_ensure(4);
 
   @$pb.TagNumber(6)
-  $1.Config get config => $_getN(3);
+  LogRecord get logRecord => $_getN(5);
   @$pb.TagNumber(6)
-  set config($1.Config v) { setField(6, v); }
+  set logRecord(LogRecord v) { setField(6, v); }
   @$pb.TagNumber(6)
-  $core.bool hasConfig() => $_has(3);
+  $core.bool hasLogRecord() => $_has(5);
   @$pb.TagNumber(6)
-  void clearConfig() => clearField(6);
+  void clearLogRecord() => clearField(6);
   @$pb.TagNumber(6)
-  $1.Config ensureConfig() => $_ensure(3);
+  LogRecord ensureLogRecord() => $_ensure(5);
 
   @$pb.TagNumber(7)
-  LogRecord get logRecord => $_getN(4);
+  $core.int get configCompleteId => $_getIZ(6);
   @$pb.TagNumber(7)
-  set logRecord(LogRecord v) { setField(7, v); }
+  set configCompleteId($core.int v) { $_setUnsignedInt32(6, v); }
   @$pb.TagNumber(7)
-  $core.bool hasLogRecord() => $_has(4);
+  $core.bool hasConfigCompleteId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLogRecord() => clearField(7);
-  @$pb.TagNumber(7)
-  LogRecord ensureLogRecord() => $_ensure(4);
+  void clearConfigCompleteId() => clearField(7);
 
   @$pb.TagNumber(8)
-  $core.int get configCompleteId => $_getIZ(5);
+  $core.bool get rebooted => $_getBF(7);
   @$pb.TagNumber(8)
-  set configCompleteId($core.int v) { $_setUnsignedInt32(5, v); }
+  set rebooted($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasConfigCompleteId() => $_has(5);
+  $core.bool hasRebooted() => $_has(7);
   @$pb.TagNumber(8)
-  void clearConfigCompleteId() => clearField(8);
+  void clearRebooted() => clearField(8);
 
   @$pb.TagNumber(9)
-  $core.bool get rebooted => $_getBF(6);
+  $2.ModuleConfig get moduleConfig => $_getN(8);
   @$pb.TagNumber(9)
-  set rebooted($core.bool v) { $_setBool(6, v); }
+  set moduleConfig($2.ModuleConfig v) { setField(9, v); }
   @$pb.TagNumber(9)
-  $core.bool hasRebooted() => $_has(6);
+  $core.bool hasModuleConfig() => $_has(8);
   @$pb.TagNumber(9)
-  void clearRebooted() => clearField(9);
+  void clearModuleConfig() => clearField(9);
+  @$pb.TagNumber(9)
+  $2.ModuleConfig ensureModuleConfig() => $_ensure(8);
 
   @$pb.TagNumber(10)
-  $2.ModuleConfig get moduleConfig => $_getN(7);
+  $3.Channel get channel => $_getN(9);
   @$pb.TagNumber(10)
-  set moduleConfig($2.ModuleConfig v) { setField(10, v); }
+  set channel($3.Channel v) { setField(10, v); }
   @$pb.TagNumber(10)
-  $core.bool hasModuleConfig() => $_has(7);
+  $core.bool hasChannel() => $_has(9);
   @$pb.TagNumber(10)
-  void clearModuleConfig() => clearField(10);
+  void clearChannel() => clearField(10);
   @$pb.TagNumber(10)
-  $2.ModuleConfig ensureModuleConfig() => $_ensure(7);
-
-  @$pb.TagNumber(11)
-  MeshPacket get packet => $_getN(8);
-  @$pb.TagNumber(11)
-  set packet(MeshPacket v) { setField(11, v); }
-  @$pb.TagNumber(11)
-  $core.bool hasPacket() => $_has(8);
-  @$pb.TagNumber(11)
-  void clearPacket() => clearField(11);
-  @$pb.TagNumber(11)
-  MeshPacket ensurePacket() => $_ensure(8);
-}
-
-class ToRadio_PeerInfo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ToRadio.PeerInfo', createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'appVersion', $pb.PbFieldType.OU3)
-    ..aOB(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mqttGateway')
-    ..hasRequiredFields = false
-  ;
-
-  ToRadio_PeerInfo._() : super();
-  factory ToRadio_PeerInfo({
-    $core.int? appVersion,
-    $core.bool? mqttGateway,
-  }) {
-    final _result = create();
-    if (appVersion != null) {
-      _result.appVersion = appVersion;
-    }
-    if (mqttGateway != null) {
-      _result.mqttGateway = mqttGateway;
-    }
-    return _result;
-  }
-  factory ToRadio_PeerInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ToRadio_PeerInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ToRadio_PeerInfo clone() => ToRadio_PeerInfo()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ToRadio_PeerInfo copyWith(void Function(ToRadio_PeerInfo) updates) => super.copyWith((message) => updates(message as ToRadio_PeerInfo)) as ToRadio_PeerInfo; // ignore: deprecated_member_use
-  $pb.BuilderInfo get info_ => _i;
-  @$core.pragma('dart2js:noInline')
-  static ToRadio_PeerInfo create() => ToRadio_PeerInfo._();
-  ToRadio_PeerInfo createEmptyInstance() => create();
-  static $pb.PbList<ToRadio_PeerInfo> createRepeated() => $pb.PbList<ToRadio_PeerInfo>();
-  @$core.pragma('dart2js:noInline')
-  static ToRadio_PeerInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ToRadio_PeerInfo>(create);
-  static ToRadio_PeerInfo? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.int get appVersion => $_getIZ(0);
-  @$pb.TagNumber(1)
-  set appVersion($core.int v) { $_setUnsignedInt32(0, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasAppVersion() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearAppVersion() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.bool get mqttGateway => $_getBF(1);
-  @$pb.TagNumber(2)
-  set mqttGateway($core.bool v) { $_setBool(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasMqttGateway() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearMqttGateway() => clearField(2);
+  $3.Channel ensureChannel() => $_ensure(9);
 }
 
 enum ToRadio_PayloadVariant {
   packet, 
-  peerInfo, 
   wantConfigId, 
   disconnect, 
   notSet
@@ -1847,34 +1804,28 @@ enum ToRadio_PayloadVariant {
 
 class ToRadio extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, ToRadio_PayloadVariant> _ToRadio_PayloadVariantByTag = {
-    2 : ToRadio_PayloadVariant.packet,
-    3 : ToRadio_PayloadVariant.peerInfo,
-    100 : ToRadio_PayloadVariant.wantConfigId,
-    104 : ToRadio_PayloadVariant.disconnect,
+    1 : ToRadio_PayloadVariant.packet,
+    3 : ToRadio_PayloadVariant.wantConfigId,
+    4 : ToRadio_PayloadVariant.disconnect,
     0 : ToRadio_PayloadVariant.notSet
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ToRadio', createEmptyInstance: create)
-    ..oo(0, [2, 3, 100, 104])
-    ..aOM<MeshPacket>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: MeshPacket.create)
-    ..aOM<ToRadio_PeerInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'peerInfo', subBuilder: ToRadio_PeerInfo.create)
-    ..a<$core.int>(100, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wantConfigId', $pb.PbFieldType.OU3)
-    ..aOB(104, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disconnect')
+    ..oo(0, [1, 3, 4])
+    ..aOM<MeshPacket>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'packet', subBuilder: MeshPacket.create)
+    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wantConfigId', $pb.PbFieldType.OU3)
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'disconnect')
     ..hasRequiredFields = false
   ;
 
   ToRadio._() : super();
   factory ToRadio({
     MeshPacket? packet,
-    ToRadio_PeerInfo? peerInfo,
     $core.int? wantConfigId,
     $core.bool? disconnect,
   }) {
     final _result = create();
     if (packet != null) {
       _result.packet = packet;
-    }
-    if (peerInfo != null) {
-      _result.peerInfo = peerInfo;
     }
     if (wantConfigId != null) {
       _result.wantConfigId = wantConfigId;
@@ -1908,57 +1859,46 @@ class ToRadio extends $pb.GeneratedMessage {
   ToRadio_PayloadVariant whichPayloadVariant() => _ToRadio_PayloadVariantByTag[$_whichOneof(0)]!;
   void clearPayloadVariant() => clearField($_whichOneof(0));
 
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
   MeshPacket get packet => $_getN(0);
-  @$pb.TagNumber(2)
-  set packet(MeshPacket v) { setField(2, v); }
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
+  set packet(MeshPacket v) { setField(1, v); }
+  @$pb.TagNumber(1)
   $core.bool hasPacket() => $_has(0);
-  @$pb.TagNumber(2)
-  void clearPacket() => clearField(2);
-  @$pb.TagNumber(2)
+  @$pb.TagNumber(1)
+  void clearPacket() => clearField(1);
+  @$pb.TagNumber(1)
   MeshPacket ensurePacket() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  ToRadio_PeerInfo get peerInfo => $_getN(1);
+  $core.int get wantConfigId => $_getIZ(1);
   @$pb.TagNumber(3)
-  set peerInfo(ToRadio_PeerInfo v) { setField(3, v); }
+  set wantConfigId($core.int v) { $_setUnsignedInt32(1, v); }
   @$pb.TagNumber(3)
-  $core.bool hasPeerInfo() => $_has(1);
+  $core.bool hasWantConfigId() => $_has(1);
   @$pb.TagNumber(3)
-  void clearPeerInfo() => clearField(3);
-  @$pb.TagNumber(3)
-  ToRadio_PeerInfo ensurePeerInfo() => $_ensure(1);
+  void clearWantConfigId() => clearField(3);
 
-  @$pb.TagNumber(100)
-  $core.int get wantConfigId => $_getIZ(2);
-  @$pb.TagNumber(100)
-  set wantConfigId($core.int v) { $_setUnsignedInt32(2, v); }
-  @$pb.TagNumber(100)
-  $core.bool hasWantConfigId() => $_has(2);
-  @$pb.TagNumber(100)
-  void clearWantConfigId() => clearField(100);
-
-  @$pb.TagNumber(104)
-  $core.bool get disconnect => $_getBF(3);
-  @$pb.TagNumber(104)
-  set disconnect($core.bool v) { $_setBool(3, v); }
-  @$pb.TagNumber(104)
-  $core.bool hasDisconnect() => $_has(3);
-  @$pb.TagNumber(104)
-  void clearDisconnect() => clearField(104);
+  @$pb.TagNumber(4)
+  $core.bool get disconnect => $_getBF(2);
+  @$pb.TagNumber(4)
+  set disconnect($core.bool v) { $_setBool(2, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasDisconnect() => $_has(2);
+  @$pb.TagNumber(4)
+  void clearDisconnect() => clearField(4);
 }
 
 class Compressed extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Compressed', createEmptyInstance: create)
-    ..e<$3.PortNum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'portnum', $pb.PbFieldType.OE, defaultOrMaker: $3.PortNum.UNKNOWN_APP, valueOf: $3.PortNum.valueOf, enumValues: $3.PortNum.values)
+    ..e<$4.PortNum>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'portnum', $pb.PbFieldType.OE, defaultOrMaker: $4.PortNum.UNKNOWN_APP, valueOf: $4.PortNum.valueOf, enumValues: $4.PortNum.values)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
     ..hasRequiredFields = false
   ;
 
   Compressed._() : super();
   factory Compressed({
-    $3.PortNum? portnum,
+    $4.PortNum? portnum,
     $core.List<$core.int>? data,
   }) {
     final _result = create();
@@ -1992,9 +1932,9 @@ class Compressed extends $pb.GeneratedMessage {
   static Compressed? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $3.PortNum get portnum => $_getN(0);
+  $4.PortNum get portnum => $_getN(0);
   @$pb.TagNumber(1)
-  set portnum($3.PortNum v) { setField(1, v); }
+  set portnum($4.PortNum v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPortnum() => $_has(0);
   @$pb.TagNumber(1)

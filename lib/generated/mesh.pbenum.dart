@@ -13,15 +13,19 @@ class HardwareModel extends $pb.ProtobufEnum {
   static const HardwareModel UNSET = HardwareModel._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UNSET');
   static const HardwareModel TLORA_V2 = HardwareModel._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V2');
   static const HardwareModel TLORA_V1 = HardwareModel._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V1');
-  static const HardwareModel TLORA_V2_1_1p6 = HardwareModel._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V2_1_1p6');
+  static const HardwareModel TLORA_V2_1_1P6 = HardwareModel._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V2_1_1P6');
   static const HardwareModel TBEAM = HardwareModel._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TBEAM');
   static const HardwareModel HELTEC_V2_0 = HardwareModel._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'HELTEC_V2_0');
-  static const HardwareModel TBEAM0p7 = HardwareModel._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TBEAM0p7');
+  static const HardwareModel TBEAM_V0P7 = HardwareModel._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TBEAM_V0P7');
   static const HardwareModel T_ECHO = HardwareModel._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'T_ECHO');
-  static const HardwareModel TLORA_V1_1p3 = HardwareModel._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V1_1p3');
+  static const HardwareModel TLORA_V1_1P3 = HardwareModel._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TLORA_V1_1P3');
   static const HardwareModel RAK4631 = HardwareModel._(9, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RAK4631');
   static const HardwareModel HELTEC_V2_1 = HardwareModel._(10, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'HELTEC_V2_1');
   static const HardwareModel HELTEC_V1 = HardwareModel._(11, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'HELTEC_V1');
+  static const HardwareModel LILYGO_TBEAM_S3_CORE = HardwareModel._(12, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LILYGO_TBEAM_S3_CORE');
+  static const HardwareModel RAK11200 = HardwareModel._(13, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RAK11200');
+  static const HardwareModel NANO_G1 = HardwareModel._(14, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NANO_G1');
+  static const HardwareModel STATION_G1 = HardwareModel._(25, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STATION_G1');
   static const HardwareModel LORA_RELAY_V1 = HardwareModel._(32, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LORA_RELAY_V1');
   static const HardwareModel NRF52840DK = HardwareModel._(33, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NRF52840DK');
   static const HardwareModel PPR = HardwareModel._(34, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PPR');
@@ -30,27 +34,28 @@ class HardwareModel extends $pb.ProtobufEnum {
   static const HardwareModel PORTDUINO = HardwareModel._(37, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PORTDUINO');
   static const HardwareModel ANDROID_SIM = HardwareModel._(38, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ANDROID_SIM');
   static const HardwareModel DIY_V1 = HardwareModel._(39, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DIY_V1');
-  static const HardwareModel RAK11200 = HardwareModel._(40, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RAK11200');
-  static const HardwareModel NANO_G1 = HardwareModel._(41, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NANO_G1');
-  static const HardwareModel NRF52840_PCA10059 = HardwareModel._(42, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NRF52840_PCA10059');
-  static const HardwareModel DR_DEV = HardwareModel._(43, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DR_DEV');
-  static const HardwareModel M5STACK = HardwareModel._(44, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'M5STACK');
-  static const HardwareModel STATION_G1 = HardwareModel._(45, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'STATION_G1');
+  static const HardwareModel NRF52840_PCA10059 = HardwareModel._(40, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NRF52840_PCA10059');
+  static const HardwareModel DR_DEV = HardwareModel._(41, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DR_DEV');
+  static const HardwareModel M5STACK = HardwareModel._(42, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'M5STACK');
   static const HardwareModel PRIVATE_HW = HardwareModel._(255, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'PRIVATE_HW');
 
   static const $core.List<HardwareModel> values = <HardwareModel> [
     UNSET,
     TLORA_V2,
     TLORA_V1,
-    TLORA_V2_1_1p6,
+    TLORA_V2_1_1P6,
     TBEAM,
     HELTEC_V2_0,
-    TBEAM0p7,
+    TBEAM_V0P7,
     T_ECHO,
-    TLORA_V1_1p3,
+    TLORA_V1_1P3,
     RAK4631,
     HELTEC_V2_1,
     HELTEC_V1,
+    LILYGO_TBEAM_S3_CORE,
+    RAK11200,
+    NANO_G1,
+    STATION_G1,
     LORA_RELAY_V1,
     NRF52840DK,
     PPR,
@@ -59,12 +64,9 @@ class HardwareModel extends $pb.ProtobufEnum {
     PORTDUINO,
     ANDROID_SIM,
     DIY_V1,
-    RAK11200,
-    NANO_G1,
     NRF52840_PCA10059,
     DR_DEV,
     M5STACK,
-    STATION_G1,
     PRIVATE_HW,
   ];
 
@@ -75,11 +77,11 @@ class HardwareModel extends $pb.ProtobufEnum {
 }
 
 class Constants extends $pb.ProtobufEnum {
-  static const Constants Unused = Constants._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Unused');
+  static const Constants ZERO = Constants._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ZERO');
   static const Constants DATA_PAYLOAD_LEN = Constants._(237, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DATA_PAYLOAD_LEN');
 
   static const $core.List<Constants> values = <Constants> [
-    Unused,
+    ZERO,
     DATA_PAYLOAD_LEN,
   ];
 
@@ -90,32 +92,32 @@ class Constants extends $pb.ProtobufEnum {
 }
 
 class CriticalErrorCode extends $pb.ProtobufEnum {
-  static const CriticalErrorCode None = CriticalErrorCode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'None');
-  static const CriticalErrorCode TxWatchdog = CriticalErrorCode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TxWatchdog');
-  static const CriticalErrorCode SleepEnterWait = CriticalErrorCode._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SleepEnterWait');
-  static const CriticalErrorCode NoRadio = CriticalErrorCode._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NoRadio');
-  static const CriticalErrorCode Unspecified = CriticalErrorCode._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Unspecified');
-  static const CriticalErrorCode UBloxInitFailed = CriticalErrorCode._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UBloxInitFailed');
-  static const CriticalErrorCode NoAXP192 = CriticalErrorCode._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NoAXP192');
-  static const CriticalErrorCode InvalidRadioSetting = CriticalErrorCode._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'InvalidRadioSetting');
-  static const CriticalErrorCode TransmitFailed = CriticalErrorCode._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TransmitFailed');
-  static const CriticalErrorCode Brownout = CriticalErrorCode._(9, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'Brownout');
-  static const CriticalErrorCode SX1262Failure = CriticalErrorCode._(10, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SX1262Failure');
-  static const CriticalErrorCode RadioSpiBug = CriticalErrorCode._(11, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RadioSpiBug');
+  static const CriticalErrorCode NONE = CriticalErrorCode._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NONE');
+  static const CriticalErrorCode TX_WATCHDOG = CriticalErrorCode._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TX_WATCHDOG');
+  static const CriticalErrorCode SLEEP_ENTER_WAIT = CriticalErrorCode._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SLEEP_ENTER_WAIT');
+  static const CriticalErrorCode NO_RADIO = CriticalErrorCode._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NO_RADIO');
+  static const CriticalErrorCode UNSPECIFIED = CriticalErrorCode._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UNSPECIFIED');
+  static const CriticalErrorCode UBLOX_UNIT_FAILED = CriticalErrorCode._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'UBLOX_UNIT_FAILED');
+  static const CriticalErrorCode NO_AXP192 = CriticalErrorCode._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NO_AXP192');
+  static const CriticalErrorCode INVALID_RADIO_SETTING = CriticalErrorCode._(7, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'INVALID_RADIO_SETTING');
+  static const CriticalErrorCode TRANSMIT_FAILED = CriticalErrorCode._(8, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'TRANSMIT_FAILED');
+  static const CriticalErrorCode BROWNOUT = CriticalErrorCode._(9, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BROWNOUT');
+  static const CriticalErrorCode SX1262_FAILURE = CriticalErrorCode._(10, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'SX1262_FAILURE');
+  static const CriticalErrorCode RADIO_SPI_BUG = CriticalErrorCode._(11, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'RADIO_SPI_BUG');
 
   static const $core.List<CriticalErrorCode> values = <CriticalErrorCode> [
-    None,
-    TxWatchdog,
-    SleepEnterWait,
-    NoRadio,
-    Unspecified,
-    UBloxInitFailed,
-    NoAXP192,
-    InvalidRadioSetting,
-    TransmitFailed,
-    Brownout,
-    SX1262Failure,
-    RadioSpiBug,
+    NONE,
+    TX_WATCHDOG,
+    SLEEP_ENTER_WAIT,
+    NO_RADIO,
+    UNSPECIFIED,
+    UBLOX_UNIT_FAILED,
+    NO_AXP192,
+    INVALID_RADIO_SETTING,
+    TRANSMIT_FAILED,
+    BROWNOUT,
+    SX1262_FAILURE,
+    RADIO_SPI_BUG,
   ];
 
   static final $core.Map<$core.int, CriticalErrorCode> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -125,16 +127,16 @@ class CriticalErrorCode extends $pb.ProtobufEnum {
 }
 
 class Position_LocSource extends $pb.ProtobufEnum {
-  static const Position_LocSource LOCSRC_UNSPECIFIED = Position_LocSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOCSRC_UNSPECIFIED');
-  static const Position_LocSource LOCSRC_MANUAL_ENTRY = Position_LocSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOCSRC_MANUAL_ENTRY');
-  static const Position_LocSource LOCSRC_GPS_INTERNAL = Position_LocSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOCSRC_GPS_INTERNAL');
-  static const Position_LocSource LOCSRC_GPS_EXTERNAL = Position_LocSource._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOCSRC_GPS_EXTERNAL');
+  static const Position_LocSource LOC_UNSET = Position_LocSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOC_UNSET');
+  static const Position_LocSource LOC_MANUAL = Position_LocSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOC_MANUAL');
+  static const Position_LocSource LOC_INTERNAL = Position_LocSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOC_INTERNAL');
+  static const Position_LocSource LOC_EXTERNAL = Position_LocSource._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LOC_EXTERNAL');
 
   static const $core.List<Position_LocSource> values = <Position_LocSource> [
-    LOCSRC_UNSPECIFIED,
-    LOCSRC_MANUAL_ENTRY,
-    LOCSRC_GPS_INTERNAL,
-    LOCSRC_GPS_EXTERNAL,
+    LOC_UNSET,
+    LOC_MANUAL,
+    LOC_INTERNAL,
+    LOC_EXTERNAL,
   ];
 
   static final $core.Map<$core.int, Position_LocSource> _byValue = $pb.ProtobufEnum.initByValue(values);
@@ -144,18 +146,18 @@ class Position_LocSource extends $pb.ProtobufEnum {
 }
 
 class Position_AltSource extends $pb.ProtobufEnum {
-  static const Position_AltSource ALTSRC_UNSPECIFIED = Position_AltSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALTSRC_UNSPECIFIED');
-  static const Position_AltSource ALTSRC_MANUAL_ENTRY = Position_AltSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALTSRC_MANUAL_ENTRY');
-  static const Position_AltSource ALTSRC_GPS_INTERNAL = Position_AltSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALTSRC_GPS_INTERNAL');
-  static const Position_AltSource ALTSRC_GPS_EXTERNAL = Position_AltSource._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALTSRC_GPS_EXTERNAL');
-  static const Position_AltSource ALTSRC_BAROMETRIC = Position_AltSource._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALTSRC_BAROMETRIC');
+  static const Position_AltSource ALT_UNSET = Position_AltSource._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALT_UNSET');
+  static const Position_AltSource ALT_MANUAL = Position_AltSource._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALT_MANUAL');
+  static const Position_AltSource ALT_INTERNAL = Position_AltSource._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALT_INTERNAL');
+  static const Position_AltSource ALT_EXTERNAL = Position_AltSource._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALT_EXTERNAL');
+  static const Position_AltSource ALT_BAROMETRIC = Position_AltSource._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ALT_BAROMETRIC');
 
   static const $core.List<Position_AltSource> values = <Position_AltSource> [
-    ALTSRC_UNSPECIFIED,
-    ALTSRC_MANUAL_ENTRY,
-    ALTSRC_GPS_INTERNAL,
-    ALTSRC_GPS_EXTERNAL,
-    ALTSRC_BAROMETRIC,
+    ALT_UNSET,
+    ALT_MANUAL,
+    ALT_INTERNAL,
+    ALT_EXTERNAL,
+    ALT_BAROMETRIC,
   ];
 
   static final $core.Map<$core.int, Position_AltSource> _byValue = $pb.ProtobufEnum.initByValue(values);

@@ -16,7 +16,7 @@ export 'remote_hardware.pbenum.dart';
 
 class HardwareMessage extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HardwareMessage', createEmptyInstance: create)
-    ..e<HardwareMessage_Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'typ', $pb.PbFieldType.OE, defaultOrMaker: HardwareMessage_Type.UNSET, valueOf: HardwareMessage_Type.valueOf, enumValues: HardwareMessage_Type.values)
+    ..e<HardwareMessage_Type>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: HardwareMessage_Type.UNSET, valueOf: HardwareMessage_Type.valueOf, enumValues: HardwareMessage_Type.values)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gpioMask', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gpioValue', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
@@ -24,13 +24,13 @@ class HardwareMessage extends $pb.GeneratedMessage {
 
   HardwareMessage._() : super();
   factory HardwareMessage({
-    HardwareMessage_Type? typ,
+    HardwareMessage_Type? type,
     $fixnum.Int64? gpioMask,
     $fixnum.Int64? gpioValue,
   }) {
     final _result = create();
-    if (typ != null) {
-      _result.typ = typ;
+    if (type != null) {
+      _result.type = type;
     }
     if (gpioMask != null) {
       _result.gpioMask = gpioMask;
@@ -62,13 +62,13 @@ class HardwareMessage extends $pb.GeneratedMessage {
   static HardwareMessage? _defaultInstance;
 
   @$pb.TagNumber(1)
-  HardwareMessage_Type get typ => $_getN(0);
+  HardwareMessage_Type get type => $_getN(0);
   @$pb.TagNumber(1)
-  set typ(HardwareMessage_Type v) { setField(1, v); }
+  set type(HardwareMessage_Type v) { setField(1, v); }
   @$pb.TagNumber(1)
-  $core.bool hasTyp() => $_has(0);
+  $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTyp() => clearField(1);
+  void clearType() => clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get gpioMask => $_getI64(1);

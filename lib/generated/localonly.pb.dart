@@ -17,7 +17,7 @@ class LocalConfig extends $pb.GeneratedMessage {
     ..aOM<$1.Config_DeviceConfig>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'device', subBuilder: $1.Config_DeviceConfig.create)
     ..aOM<$1.Config_PositionConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'position', subBuilder: $1.Config_PositionConfig.create)
     ..aOM<$1.Config_PowerConfig>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power', subBuilder: $1.Config_PowerConfig.create)
-    ..aOM<$1.Config_WiFiConfig>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'wifi', subBuilder: $1.Config_WiFiConfig.create)
+    ..aOM<$1.Config_NetworkConfig>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'network', subBuilder: $1.Config_NetworkConfig.create)
     ..aOM<$1.Config_DisplayConfig>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'display', subBuilder: $1.Config_DisplayConfig.create)
     ..aOM<$1.Config_LoRaConfig>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lora', subBuilder: $1.Config_LoRaConfig.create)
     ..aOM<$1.Config_BluetoothConfig>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bluetooth', subBuilder: $1.Config_BluetoothConfig.create)
@@ -30,7 +30,7 @@ class LocalConfig extends $pb.GeneratedMessage {
     $1.Config_DeviceConfig? device,
     $1.Config_PositionConfig? position,
     $1.Config_PowerConfig? power,
-    $1.Config_WiFiConfig? wifi,
+    $1.Config_NetworkConfig? network,
     $1.Config_DisplayConfig? display,
     $1.Config_LoRaConfig? lora,
     $1.Config_BluetoothConfig? bluetooth,
@@ -46,8 +46,8 @@ class LocalConfig extends $pb.GeneratedMessage {
     if (power != null) {
       _result.power = power;
     }
-    if (wifi != null) {
-      _result.wifi = wifi;
+    if (network != null) {
+      _result.network = network;
     }
     if (display != null) {
       _result.display = display;
@@ -118,15 +118,15 @@ class LocalConfig extends $pb.GeneratedMessage {
   $1.Config_PowerConfig ensurePower() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $1.Config_WiFiConfig get wifi => $_getN(3);
+  $1.Config_NetworkConfig get network => $_getN(3);
   @$pb.TagNumber(4)
-  set wifi($1.Config_WiFiConfig v) { setField(4, v); }
+  set network($1.Config_NetworkConfig v) { setField(4, v); }
   @$pb.TagNumber(4)
-  $core.bool hasWifi() => $_has(3);
+  $core.bool hasNetwork() => $_has(3);
   @$pb.TagNumber(4)
-  void clearWifi() => clearField(4);
+  void clearNetwork() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Config_WiFiConfig ensureWifi() => $_ensure(3);
+  $1.Config_NetworkConfig ensureNetwork() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $1.Config_DisplayConfig get display => $_getN(4);

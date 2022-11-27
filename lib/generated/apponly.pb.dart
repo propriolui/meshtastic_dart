@@ -9,19 +9,19 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'channel.pb.dart' as $5;
+import 'channel.pb.dart' as $3;
 import 'config.pb.dart' as $1;
 
 class ChannelSet extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ChannelSet', createEmptyInstance: create)
-    ..pc<$5.ChannelSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'settings', $pb.PbFieldType.PM, subBuilder: $5.ChannelSettings.create)
+    ..pc<$3.ChannelSettings>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'settings', $pb.PbFieldType.PM, subBuilder: $3.ChannelSettings.create)
     ..aOM<$1.Config_LoRaConfig>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'loraConfig', subBuilder: $1.Config_LoRaConfig.create)
     ..hasRequiredFields = false
   ;
 
   ChannelSet._() : super();
   factory ChannelSet({
-    $core.Iterable<$5.ChannelSettings>? settings,
+    $core.Iterable<$3.ChannelSettings>? settings,
     $1.Config_LoRaConfig? loraConfig,
   }) {
     final _result = create();
@@ -55,7 +55,7 @@ class ChannelSet extends $pb.GeneratedMessage {
   static ChannelSet? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$5.ChannelSettings> get settings => $_getList(0);
+  $core.List<$3.ChannelSettings> get settings => $_getList(0);
 
   @$pb.TagNumber(2)
   $1.Config_LoRaConfig get loraConfig => $_getN(1);

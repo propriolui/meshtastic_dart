@@ -15,15 +15,19 @@ const HardwareModel$json = const {
     const {'1': 'UNSET', '2': 0},
     const {'1': 'TLORA_V2', '2': 1},
     const {'1': 'TLORA_V1', '2': 2},
-    const {'1': 'TLORA_V2_1_1p6', '2': 3},
+    const {'1': 'TLORA_V2_1_1P6', '2': 3},
     const {'1': 'TBEAM', '2': 4},
     const {'1': 'HELTEC_V2_0', '2': 5},
-    const {'1': 'TBEAM0p7', '2': 6},
+    const {'1': 'TBEAM_V0P7', '2': 6},
     const {'1': 'T_ECHO', '2': 7},
-    const {'1': 'TLORA_V1_1p3', '2': 8},
+    const {'1': 'TLORA_V1_1P3', '2': 8},
     const {'1': 'RAK4631', '2': 9},
     const {'1': 'HELTEC_V2_1', '2': 10},
     const {'1': 'HELTEC_V1', '2': 11},
+    const {'1': 'LILYGO_TBEAM_S3_CORE', '2': 12},
+    const {'1': 'RAK11200', '2': 13},
+    const {'1': 'NANO_G1', '2': 14},
+    const {'1': 'STATION_G1', '2': 25},
     const {'1': 'LORA_RELAY_V1', '2': 32},
     const {'1': 'NRF52840DK', '2': 33},
     const {'1': 'PPR', '2': 34},
@@ -32,50 +36,47 @@ const HardwareModel$json = const {
     const {'1': 'PORTDUINO', '2': 37},
     const {'1': 'ANDROID_SIM', '2': 38},
     const {'1': 'DIY_V1', '2': 39},
-    const {'1': 'RAK11200', '2': 40},
-    const {'1': 'NANO_G1', '2': 41},
-    const {'1': 'NRF52840_PCA10059', '2': 42},
-    const {'1': 'DR_DEV', '2': 43},
-    const {'1': 'M5STACK', '2': 44},
-    const {'1': 'STATION_G1', '2': 45},
+    const {'1': 'NRF52840_PCA10059', '2': 40},
+    const {'1': 'DR_DEV', '2': 41},
+    const {'1': 'M5STACK', '2': 42},
     const {'1': 'PRIVATE_HW', '2': 255},
   ],
 };
 
 /// Descriptor for `HardwareModel`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List hardwareModelDescriptor = $convert.base64Decode('Cg1IYXJkd2FyZU1vZGVsEgkKBVVOU0VUEAASDAoIVExPUkFfVjIQARIMCghUTE9SQV9WMRACEhIKDlRMT1JBX1YyXzFfMXA2EAMSCQoFVEJFQU0QBBIPCgtIRUxURUNfVjJfMBAFEgwKCFRCRUFNMHA3EAYSCgoGVF9FQ0hPEAcSEAoMVExPUkFfVjFfMXAzEAgSCwoHUkFLNDYzMRAJEg8KC0hFTFRFQ19WMl8xEAoSDQoJSEVMVEVDX1YxEAsSEQoNTE9SQV9SRUxBWV9WMRAgEg4KCk5SRjUyODQwREsQIRIHCgNQUFIQIhIPCgtHRU5JRUJMT0NLUxAjEhEKDU5SRjUyX1VOS05PV04QJBINCglQT1JURFVJTk8QJRIPCgtBTkRST0lEX1NJTRAmEgoKBkRJWV9WMRAnEgwKCFJBSzExMjAwECgSCwoHTkFOT19HMRApEhUKEU5SRjUyODQwX1BDQTEwMDU5ECoSCgoGRFJfREVWECsSCwoHTTVTVEFDSxAsEg4KClNUQVRJT05fRzEQLRIPCgpQUklWQVRFX0hXEP8B');
+final $typed_data.Uint8List hardwareModelDescriptor = $convert.base64Decode('Cg1IYXJkd2FyZU1vZGVsEgkKBVVOU0VUEAASDAoIVExPUkFfVjIQARIMCghUTE9SQV9WMRACEhIKDlRMT1JBX1YyXzFfMVA2EAMSCQoFVEJFQU0QBBIPCgtIRUxURUNfVjJfMBAFEg4KClRCRUFNX1YwUDcQBhIKCgZUX0VDSE8QBxIQCgxUTE9SQV9WMV8xUDMQCBILCgdSQUs0NjMxEAkSDwoLSEVMVEVDX1YyXzEQChINCglIRUxURUNfVjEQCxIYChRMSUxZR09fVEJFQU1fUzNfQ09SRRAMEgwKCFJBSzExMjAwEA0SCwoHTkFOT19HMRAOEg4KClNUQVRJT05fRzEQGRIRCg1MT1JBX1JFTEFZX1YxECASDgoKTlJGNTI4NDBESxAhEgcKA1BQUhAiEg8KC0dFTklFQkxPQ0tTECMSEQoNTlJGNTJfVU5LTk9XThAkEg0KCVBPUlREVUlOTxAlEg8KC0FORFJPSURfU0lNECYSCgoGRElZX1YxECcSFQoRTlJGNTI4NDBfUENBMTAwNTkQKBIKCgZEUl9ERVYQKRILCgdNNVNUQUNLECoSDwoKUFJJVkFURV9IVxD/AQ==');
 @$core.Deprecated('Use constantsDescriptor instead')
 const Constants$json = const {
   '1': 'Constants',
   '2': const [
-    const {'1': 'Unused', '2': 0},
+    const {'1': 'ZERO', '2': 0},
     const {'1': 'DATA_PAYLOAD_LEN', '2': 237},
   ],
 };
 
 /// Descriptor for `Constants`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List constantsDescriptor = $convert.base64Decode('CglDb25zdGFudHMSCgoGVW51c2VkEAASFQoQREFUQV9QQVlMT0FEX0xFThDtAQ==');
+final $typed_data.Uint8List constantsDescriptor = $convert.base64Decode('CglDb25zdGFudHMSCAoEWkVSTxAAEhUKEERBVEFfUEFZTE9BRF9MRU4Q7QE=');
 @$core.Deprecated('Use criticalErrorCodeDescriptor instead')
 const CriticalErrorCode$json = const {
   '1': 'CriticalErrorCode',
   '2': const [
-    const {'1': 'None', '2': 0},
-    const {'1': 'TxWatchdog', '2': 1},
-    const {'1': 'SleepEnterWait', '2': 2},
-    const {'1': 'NoRadio', '2': 3},
-    const {'1': 'Unspecified', '2': 4},
-    const {'1': 'UBloxInitFailed', '2': 5},
-    const {'1': 'NoAXP192', '2': 6},
-    const {'1': 'InvalidRadioSetting', '2': 7},
-    const {'1': 'TransmitFailed', '2': 8},
-    const {'1': 'Brownout', '2': 9},
-    const {'1': 'SX1262Failure', '2': 10},
-    const {'1': 'RadioSpiBug', '2': 11},
+    const {'1': 'NONE', '2': 0},
+    const {'1': 'TX_WATCHDOG', '2': 1},
+    const {'1': 'SLEEP_ENTER_WAIT', '2': 2},
+    const {'1': 'NO_RADIO', '2': 3},
+    const {'1': 'UNSPECIFIED', '2': 4},
+    const {'1': 'UBLOX_UNIT_FAILED', '2': 5},
+    const {'1': 'NO_AXP192', '2': 6},
+    const {'1': 'INVALID_RADIO_SETTING', '2': 7},
+    const {'1': 'TRANSMIT_FAILED', '2': 8},
+    const {'1': 'BROWNOUT', '2': 9},
+    const {'1': 'SX1262_FAILURE', '2': 10},
+    const {'1': 'RADIO_SPI_BUG', '2': 11},
   ],
 };
 
 /// Descriptor for `CriticalErrorCode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List criticalErrorCodeDescriptor = $convert.base64Decode('ChFDcml0aWNhbEVycm9yQ29kZRIICgROb25lEAASDgoKVHhXYXRjaGRvZxABEhIKDlNsZWVwRW50ZXJXYWl0EAISCwoHTm9SYWRpbxADEg8KC1Vuc3BlY2lmaWVkEAQSEwoPVUJsb3hJbml0RmFpbGVkEAUSDAoITm9BWFAxOTIQBhIXChNJbnZhbGlkUmFkaW9TZXR0aW5nEAcSEgoOVHJhbnNtaXRGYWlsZWQQCBIMCghCcm93bm91dBAJEhEKDVNYMTI2MkZhaWx1cmUQChIPCgtSYWRpb1NwaUJ1ZxAL');
+final $typed_data.Uint8List criticalErrorCodeDescriptor = $convert.base64Decode('ChFDcml0aWNhbEVycm9yQ29kZRIICgROT05FEAASDwoLVFhfV0FUQ0hET0cQARIUChBTTEVFUF9FTlRFUl9XQUlUEAISDAoITk9fUkFESU8QAxIPCgtVTlNQRUNJRklFRBAEEhUKEVVCTE9YX1VOSVRfRkFJTEVEEAUSDQoJTk9fQVhQMTkyEAYSGQoVSU5WQUxJRF9SQURJT19TRVRUSU5HEAcSEwoPVFJBTlNNSVRfRkFJTEVEEAgSDAoIQlJPV05PVVQQCRISCg5TWDEyNjJfRkFJTFVSRRAKEhEKDVJBRElPX1NQSV9CVUcQCw==');
 @$core.Deprecated('Use positionDescriptor instead')
 const Position$json = const {
   '1': 'Position',
@@ -83,25 +84,25 @@ const Position$json = const {
     const {'1': 'latitude_i', '3': 1, '4': 1, '5': 15, '10': 'latitudeI'},
     const {'1': 'longitude_i', '3': 2, '4': 1, '5': 15, '10': 'longitudeI'},
     const {'1': 'altitude', '3': 3, '4': 1, '5': 5, '10': 'altitude'},
-    const {'1': 'time', '3': 9, '4': 1, '5': 7, '10': 'time'},
-    const {'1': 'location_source', '3': 10, '4': 1, '5': 14, '6': '.Position.LocSource', '10': 'locationSource'},
-    const {'1': 'altitude_source', '3': 11, '4': 1, '5': 14, '6': '.Position.AltSource', '10': 'altitudeSource'},
-    const {'1': 'pos_timestamp', '3': 12, '4': 1, '5': 7, '10': 'posTimestamp'},
-    const {'1': 'pos_time_millis', '3': 13, '4': 1, '5': 5, '10': 'posTimeMillis'},
-    const {'1': 'altitude_hae', '3': 14, '4': 1, '5': 17, '10': 'altitudeHae'},
-    const {'1': 'alt_geoid_sep', '3': 15, '4': 1, '5': 17, '10': 'altGeoidSep'},
-    const {'1': 'PDOP', '3': 16, '4': 1, '5': 13, '10': 'PDOP'},
-    const {'1': 'HDOP', '3': 17, '4': 1, '5': 13, '10': 'HDOP'},
-    const {'1': 'VDOP', '3': 18, '4': 1, '5': 13, '10': 'VDOP'},
-    const {'1': 'gps_accuracy', '3': 19, '4': 1, '5': 13, '10': 'gpsAccuracy'},
-    const {'1': 'ground_speed', '3': 20, '4': 1, '5': 13, '10': 'groundSpeed'},
-    const {'1': 'ground_track', '3': 21, '4': 1, '5': 13, '10': 'groundTrack'},
-    const {'1': 'fix_quality', '3': 22, '4': 1, '5': 13, '10': 'fixQuality'},
-    const {'1': 'fix_type', '3': 23, '4': 1, '5': 13, '10': 'fixType'},
-    const {'1': 'sats_in_view', '3': 24, '4': 1, '5': 13, '10': 'satsInView'},
-    const {'1': 'sensor_id', '3': 25, '4': 1, '5': 13, '10': 'sensorId'},
-    const {'1': 'pos_next_update', '3': 40, '4': 1, '5': 13, '10': 'posNextUpdate'},
-    const {'1': 'pos_seq_number', '3': 41, '4': 1, '5': 13, '10': 'posSeqNumber'},
+    const {'1': 'time', '3': 4, '4': 1, '5': 7, '10': 'time'},
+    const {'1': 'location_source', '3': 5, '4': 1, '5': 14, '6': '.Position.LocSource', '10': 'locationSource'},
+    const {'1': 'altitude_source', '3': 6, '4': 1, '5': 14, '6': '.Position.AltSource', '10': 'altitudeSource'},
+    const {'1': 'timestamp', '3': 7, '4': 1, '5': 7, '10': 'timestamp'},
+    const {'1': 'timestamp_millis_adjust', '3': 8, '4': 1, '5': 5, '10': 'timestampMillisAdjust'},
+    const {'1': 'altitude_hae', '3': 9, '4': 1, '5': 17, '10': 'altitudeHae'},
+    const {'1': 'altitude_geoidal_separation', '3': 10, '4': 1, '5': 17, '10': 'altitudeGeoidalSeparation'},
+    const {'1': 'PDOP', '3': 11, '4': 1, '5': 13, '10': 'PDOP'},
+    const {'1': 'HDOP', '3': 12, '4': 1, '5': 13, '10': 'HDOP'},
+    const {'1': 'VDOP', '3': 13, '4': 1, '5': 13, '10': 'VDOP'},
+    const {'1': 'gps_accuracy', '3': 14, '4': 1, '5': 13, '10': 'gpsAccuracy'},
+    const {'1': 'ground_speed', '3': 15, '4': 1, '5': 13, '10': 'groundSpeed'},
+    const {'1': 'ground_track', '3': 16, '4': 1, '5': 13, '10': 'groundTrack'},
+    const {'1': 'fix_quality', '3': 17, '4': 1, '5': 13, '10': 'fixQuality'},
+    const {'1': 'fix_type', '3': 18, '4': 1, '5': 13, '10': 'fixType'},
+    const {'1': 'sats_in_view', '3': 19, '4': 1, '5': 13, '10': 'satsInView'},
+    const {'1': 'sensor_id', '3': 20, '4': 1, '5': 13, '10': 'sensorId'},
+    const {'1': 'next_update', '3': 21, '4': 1, '5': 13, '10': 'nextUpdate'},
+    const {'1': 'seq_number', '3': 22, '4': 1, '5': 13, '10': 'seqNumber'},
   ],
   '4': const [Position_LocSource$json, Position_AltSource$json],
 };
@@ -110,10 +111,10 @@ const Position$json = const {
 const Position_LocSource$json = const {
   '1': 'LocSource',
   '2': const [
-    const {'1': 'LOCSRC_UNSPECIFIED', '2': 0},
-    const {'1': 'LOCSRC_MANUAL_ENTRY', '2': 1},
-    const {'1': 'LOCSRC_GPS_INTERNAL', '2': 2},
-    const {'1': 'LOCSRC_GPS_EXTERNAL', '2': 3},
+    const {'1': 'LOC_UNSET', '2': 0},
+    const {'1': 'LOC_MANUAL', '2': 1},
+    const {'1': 'LOC_INTERNAL', '2': 2},
+    const {'1': 'LOC_EXTERNAL', '2': 3},
   ],
 };
 
@@ -121,16 +122,16 @@ const Position_LocSource$json = const {
 const Position_AltSource$json = const {
   '1': 'AltSource',
   '2': const [
-    const {'1': 'ALTSRC_UNSPECIFIED', '2': 0},
-    const {'1': 'ALTSRC_MANUAL_ENTRY', '2': 1},
-    const {'1': 'ALTSRC_GPS_INTERNAL', '2': 2},
-    const {'1': 'ALTSRC_GPS_EXTERNAL', '2': 3},
-    const {'1': 'ALTSRC_BAROMETRIC', '2': 4},
+    const {'1': 'ALT_UNSET', '2': 0},
+    const {'1': 'ALT_MANUAL', '2': 1},
+    const {'1': 'ALT_INTERNAL', '2': 2},
+    const {'1': 'ALT_EXTERNAL', '2': 3},
+    const {'1': 'ALT_BAROMETRIC', '2': 4},
   ],
 };
 
 /// Descriptor for `Position`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List positionDescriptor = $convert.base64Decode('CghQb3NpdGlvbhIdCgpsYXRpdHVkZV9pGAEgASgPUglsYXRpdHVkZUkSHwoLbG9uZ2l0dWRlX2kYAiABKA9SCmxvbmdpdHVkZUkSGgoIYWx0aXR1ZGUYAyABKAVSCGFsdGl0dWRlEhIKBHRpbWUYCSABKAdSBHRpbWUSPAoPbG9jYXRpb25fc291cmNlGAogASgOMhMuUG9zaXRpb24uTG9jU291cmNlUg5sb2NhdGlvblNvdXJjZRI8Cg9hbHRpdHVkZV9zb3VyY2UYCyABKA4yEy5Qb3NpdGlvbi5BbHRTb3VyY2VSDmFsdGl0dWRlU291cmNlEiMKDXBvc190aW1lc3RhbXAYDCABKAdSDHBvc1RpbWVzdGFtcBImCg9wb3NfdGltZV9taWxsaXMYDSABKAVSDXBvc1RpbWVNaWxsaXMSIQoMYWx0aXR1ZGVfaGFlGA4gASgRUgthbHRpdHVkZUhhZRIiCg1hbHRfZ2VvaWRfc2VwGA8gASgRUgthbHRHZW9pZFNlcBISCgRQRE9QGBAgASgNUgRQRE9QEhIKBEhET1AYESABKA1SBEhET1ASEgoEVkRPUBgSIAEoDVIEVkRPUBIhCgxncHNfYWNjdXJhY3kYEyABKA1SC2dwc0FjY3VyYWN5EiEKDGdyb3VuZF9zcGVlZBgUIAEoDVILZ3JvdW5kU3BlZWQSIQoMZ3JvdW5kX3RyYWNrGBUgASgNUgtncm91bmRUcmFjaxIfCgtmaXhfcXVhbGl0eRgWIAEoDVIKZml4UXVhbGl0eRIZCghmaXhfdHlwZRgXIAEoDVIHZml4VHlwZRIgCgxzYXRzX2luX3ZpZXcYGCABKA1SCnNhdHNJblZpZXcSGwoJc2Vuc29yX2lkGBkgASgNUghzZW5zb3JJZBImCg9wb3NfbmV4dF91cGRhdGUYKCABKA1SDXBvc05leHRVcGRhdGUSJAoOcG9zX3NlcV9udW1iZXIYKSABKA1SDHBvc1NlcU51bWJlciJuCglMb2NTb3VyY2USFgoSTE9DU1JDX1VOU1BFQ0lGSUVEEAASFwoTTE9DU1JDX01BTlVBTF9FTlRSWRABEhcKE0xPQ1NSQ19HUFNfSU5URVJOQUwQAhIXChNMT0NTUkNfR1BTX0VYVEVSTkFMEAMihQEKCUFsdFNvdXJjZRIWChJBTFRTUkNfVU5TUEVDSUZJRUQQABIXChNBTFRTUkNfTUFOVUFMX0VOVFJZEAESFwoTQUxUU1JDX0dQU19JTlRFUk5BTBACEhcKE0FMVFNSQ19HUFNfRVhURVJOQUwQAxIVChFBTFRTUkNfQkFST01FVFJJQxAE');
+final $typed_data.Uint8List positionDescriptor = $convert.base64Decode('CghQb3NpdGlvbhIdCgpsYXRpdHVkZV9pGAEgASgPUglsYXRpdHVkZUkSHwoLbG9uZ2l0dWRlX2kYAiABKA9SCmxvbmdpdHVkZUkSGgoIYWx0aXR1ZGUYAyABKAVSCGFsdGl0dWRlEhIKBHRpbWUYBCABKAdSBHRpbWUSPAoPbG9jYXRpb25fc291cmNlGAUgASgOMhMuUG9zaXRpb24uTG9jU291cmNlUg5sb2NhdGlvblNvdXJjZRI8Cg9hbHRpdHVkZV9zb3VyY2UYBiABKA4yEy5Qb3NpdGlvbi5BbHRTb3VyY2VSDmFsdGl0dWRlU291cmNlEhwKCXRpbWVzdGFtcBgHIAEoB1IJdGltZXN0YW1wEjYKF3RpbWVzdGFtcF9taWxsaXNfYWRqdXN0GAggASgFUhV0aW1lc3RhbXBNaWxsaXNBZGp1c3QSIQoMYWx0aXR1ZGVfaGFlGAkgASgRUgthbHRpdHVkZUhhZRI+ChthbHRpdHVkZV9nZW9pZGFsX3NlcGFyYXRpb24YCiABKBFSGWFsdGl0dWRlR2VvaWRhbFNlcGFyYXRpb24SEgoEUERPUBgLIAEoDVIEUERPUBISCgRIRE9QGAwgASgNUgRIRE9QEhIKBFZET1AYDSABKA1SBFZET1ASIQoMZ3BzX2FjY3VyYWN5GA4gASgNUgtncHNBY2N1cmFjeRIhCgxncm91bmRfc3BlZWQYDyABKA1SC2dyb3VuZFNwZWVkEiEKDGdyb3VuZF90cmFjaxgQIAEoDVILZ3JvdW5kVHJhY2sSHwoLZml4X3F1YWxpdHkYESABKA1SCmZpeFF1YWxpdHkSGQoIZml4X3R5cGUYEiABKA1SB2ZpeFR5cGUSIAoMc2F0c19pbl92aWV3GBMgASgNUgpzYXRzSW5WaWV3EhsKCXNlbnNvcl9pZBgUIAEoDVIIc2Vuc29ySWQSHwoLbmV4dF91cGRhdGUYFSABKA1SCm5leHRVcGRhdGUSHQoKc2VxX251bWJlchgWIAEoDVIJc2VxTnVtYmVyIk4KCUxvY1NvdXJjZRINCglMT0NfVU5TRVQQABIOCgpMT0NfTUFOVUFMEAESEAoMTE9DX0lOVEVSTkFMEAISEAoMTE9DX0VYVEVSTkFMEAMiYgoJQWx0U291cmNlEg0KCUFMVF9VTlNFVBAAEg4KCkFMVF9NQU5VQUwQARIQCgxBTFRfSU5URVJOQUwQAhIQCgxBTFRfRVhURVJOQUwQAxISCg5BTFRfQkFST01FVFJJQxAE');
 @$core.Deprecated('Use userDescriptor instead')
 const User$json = const {
   '1': 'User',
@@ -139,23 +140,23 @@ const User$json = const {
     const {'1': 'long_name', '3': 2, '4': 1, '5': 9, '10': 'longName'},
     const {'1': 'short_name', '3': 3, '4': 1, '5': 9, '10': 'shortName'},
     const {'1': 'macaddr', '3': 4, '4': 1, '5': 12, '10': 'macaddr'},
-    const {'1': 'hw_model', '3': 6, '4': 1, '5': 14, '6': '.HardwareModel', '10': 'hwModel'},
-    const {'1': 'is_licensed', '3': 7, '4': 1, '5': 8, '10': 'isLicensed'},
+    const {'1': 'hw_model', '3': 5, '4': 1, '5': 14, '6': '.HardwareModel', '10': 'hwModel'},
+    const {'1': 'is_licensed', '3': 6, '4': 1, '5': 8, '10': 'isLicensed'},
   ],
 };
 
 /// Descriptor for `User`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIbCglsb25nX25hbWUYAiABKAlSCGxvbmdOYW1lEh0KCnNob3J0X25hbWUYAyABKAlSCXNob3J0TmFtZRIYCgdtYWNhZGRyGAQgASgMUgdtYWNhZGRyEikKCGh3X21vZGVsGAYgASgOMg4uSGFyZHdhcmVNb2RlbFIHaHdNb2RlbBIfCgtpc19saWNlbnNlZBgHIAEoCFIKaXNMaWNlbnNlZA==');
+final $typed_data.Uint8List userDescriptor = $convert.base64Decode('CgRVc2VyEg4KAmlkGAEgASgJUgJpZBIbCglsb25nX25hbWUYAiABKAlSCGxvbmdOYW1lEh0KCnNob3J0X25hbWUYAyABKAlSCXNob3J0TmFtZRIYCgdtYWNhZGRyGAQgASgMUgdtYWNhZGRyEikKCGh3X21vZGVsGAUgASgOMg4uSGFyZHdhcmVNb2RlbFIHaHdNb2RlbBIfCgtpc19saWNlbnNlZBgGIAEoCFIKaXNMaWNlbnNlZA==');
 @$core.Deprecated('Use routeDiscoveryDescriptor instead')
 const RouteDiscovery$json = const {
   '1': 'RouteDiscovery',
   '2': const [
-    const {'1': 'route', '3': 2, '4': 3, '5': 7, '10': 'route'},
+    const {'1': 'route', '3': 1, '4': 3, '5': 7, '10': 'route'},
   ],
 };
 
 /// Descriptor for `RouteDiscovery`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List routeDiscoveryDescriptor = $convert.base64Decode('Cg5Sb3V0ZURpc2NvdmVyeRIUCgVyb3V0ZRgCIAMoB1IFcm91dGU=');
+final $typed_data.Uint8List routeDiscoveryDescriptor = $convert.base64Decode('Cg5Sb3V0ZURpc2NvdmVyeRIUCgVyb3V0ZRgBIAMoB1IFcm91dGU=');
 @$core.Deprecated('Use routingDescriptor instead')
 const Routing$json = const {
   '1': 'Routing',
@@ -235,15 +236,15 @@ const MeshPacket$json = const {
     const {'1': 'id', '3': 6, '4': 1, '5': 7, '10': 'id'},
     const {'1': 'rx_time', '3': 7, '4': 1, '5': 7, '10': 'rxTime'},
     const {'1': 'rx_snr', '3': 8, '4': 1, '5': 2, '10': 'rxSnr'},
-    const {'1': 'hop_limit', '3': 10, '4': 1, '5': 13, '10': 'hopLimit'},
-    const {'1': 'want_ack', '3': 11, '4': 1, '5': 8, '10': 'wantAck'},
-    const {'1': 'priority', '3': 12, '4': 1, '5': 14, '6': '.MeshPacket.Priority', '10': 'priority'},
-    const {'1': 'rx_rssi', '3': 13, '4': 1, '5': 5, '10': 'rxRssi'},
-    const {'1': 'delayed', '3': 15, '4': 1, '5': 14, '6': '.MeshPacket.Delayed', '10': 'delayed'},
+    const {'1': 'hop_limit', '3': 9, '4': 1, '5': 13, '10': 'hopLimit'},
+    const {'1': 'want_ack', '3': 10, '4': 1, '5': 8, '10': 'wantAck'},
+    const {'1': 'priority', '3': 11, '4': 1, '5': 14, '6': '.MeshPacket.Priority', '10': 'priority'},
+    const {'1': 'rx_rssi', '3': 12, '4': 1, '5': 5, '10': 'rxRssi'},
+    const {'1': 'delayed', '3': 13, '4': 1, '5': 14, '6': '.MeshPacket.Delayed', '10': 'delayed'},
   ],
   '4': const [MeshPacket_Priority$json, MeshPacket_Delayed$json],
   '8': const [
-    const {'1': 'payloadVariant'},
+    const {'1': 'payload_variant'},
   ],
 };
 
@@ -272,7 +273,7 @@ const MeshPacket_Delayed$json = const {
 };
 
 /// Descriptor for `MeshPacket`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List meshPacketDescriptor = $convert.base64Decode('CgpNZXNoUGFja2V0EhIKBGZyb20YASABKAdSBGZyb20SDgoCdG8YAiABKAdSAnRvEhgKB2NoYW5uZWwYAyABKA1SB2NoYW5uZWwSIQoHZGVjb2RlZBgEIAEoCzIFLkRhdGFIAFIHZGVjb2RlZBIeCgllbmNyeXB0ZWQYBSABKAxIAFIJZW5jcnlwdGVkEg4KAmlkGAYgASgHUgJpZBIXCgdyeF90aW1lGAcgASgHUgZyeFRpbWUSFQoGcnhfc25yGAggASgCUgVyeFNuchIbCglob3BfbGltaXQYCiABKA1SCGhvcExpbWl0EhkKCHdhbnRfYWNrGAsgASgIUgd3YW50QWNrEjAKCHByaW9yaXR5GAwgASgOMhQuTWVzaFBhY2tldC5Qcmlvcml0eVIIcHJpb3JpdHkSFwoHcnhfcnNzaRgNIAEoBVIGcnhSc3NpEi0KB2RlbGF5ZWQYDyABKA4yEy5NZXNoUGFja2V0LkRlbGF5ZWRSB2RlbGF5ZWQiWwoIUHJpb3JpdHkSCQoFVU5TRVQQABIHCgNNSU4QARIOCgpCQUNLR1JPVU5EEAoSCwoHREVGQVVMVBBAEgwKCFJFTElBQkxFEEYSBwoDQUNLEHgSBwoDTUFYEH8iQgoHRGVsYXllZBIMCghOT19ERUxBWRAAEhUKEURFTEFZRURfQlJPQURDQVNUEAESEgoOREVMQVlFRF9ESVJFQ1QQAkIQCg5wYXlsb2FkVmFyaWFudA==');
+final $typed_data.Uint8List meshPacketDescriptor = $convert.base64Decode('CgpNZXNoUGFja2V0EhIKBGZyb20YASABKAdSBGZyb20SDgoCdG8YAiABKAdSAnRvEhgKB2NoYW5uZWwYAyABKA1SB2NoYW5uZWwSIQoHZGVjb2RlZBgEIAEoCzIFLkRhdGFIAFIHZGVjb2RlZBIeCgllbmNyeXB0ZWQYBSABKAxIAFIJZW5jcnlwdGVkEg4KAmlkGAYgASgHUgJpZBIXCgdyeF90aW1lGAcgASgHUgZyeFRpbWUSFQoGcnhfc25yGAggASgCUgVyeFNuchIbCglob3BfbGltaXQYCSABKA1SCGhvcExpbWl0EhkKCHdhbnRfYWNrGAogASgIUgd3YW50QWNrEjAKCHByaW9yaXR5GAsgASgOMhQuTWVzaFBhY2tldC5Qcmlvcml0eVIIcHJpb3JpdHkSFwoHcnhfcnNzaRgMIAEoBVIGcnhSc3NpEi0KB2RlbGF5ZWQYDSABKA4yEy5NZXNoUGFja2V0LkRlbGF5ZWRSB2RlbGF5ZWQiWwoIUHJpb3JpdHkSCQoFVU5TRVQQABIHCgNNSU4QARIOCgpCQUNLR1JPVU5EEAoSCwoHREVGQVVMVBBAEgwKCFJFTElBQkxFEEYSBwoDQUNLEHgSBwoDTUFYEH8iQgoHRGVsYXllZBIMCghOT19ERUxBWRAAEhUKEURFTEFZRURfQlJPQURDQVNUEAESEgoOREVMQVlFRF9ESVJFQ1QQAkIRCg9wYXlsb2FkX3ZhcmlhbnQ=');
 @$core.Deprecated('Use nodeInfoDescriptor instead')
 const NodeInfo$json = const {
   '1': 'NodeInfo',
@@ -294,25 +295,25 @@ const MyNodeInfo$json = const {
   '2': const [
     const {'1': 'my_node_num', '3': 1, '4': 1, '5': 13, '10': 'myNodeNum'},
     const {'1': 'has_gps', '3': 2, '4': 1, '5': 8, '10': 'hasGps'},
-    const {'1': 'max_channels', '3': 15, '4': 1, '5': 13, '10': 'maxChannels'},
-    const {'1': 'firmware_version', '3': 6, '4': 1, '5': 9, '10': 'firmwareVersion'},
-    const {'1': 'error_code', '3': 7, '4': 1, '5': 14, '6': '.CriticalErrorCode', '10': 'errorCode'},
-    const {'1': 'error_address', '3': 8, '4': 1, '5': 13, '10': 'errorAddress'},
-    const {'1': 'error_count', '3': 9, '4': 1, '5': 13, '10': 'errorCount'},
-    const {'1': 'reboot_count', '3': 10, '4': 1, '5': 13, '10': 'rebootCount'},
-    const {'1': 'bitrate', '3': 11, '4': 1, '5': 2, '10': 'bitrate'},
-    const {'1': 'message_timeout_msec', '3': 13, '4': 1, '5': 13, '10': 'messageTimeoutMsec'},
-    const {'1': 'min_app_version', '3': 14, '4': 1, '5': 13, '10': 'minAppVersion'},
-    const {'1': 'air_period_tx', '3': 16, '4': 3, '5': 13, '10': 'airPeriodTx'},
-    const {'1': 'air_period_rx', '3': 17, '4': 3, '5': 13, '10': 'airPeriodRx'},
-    const {'1': 'has_wifi', '3': 18, '4': 1, '5': 8, '10': 'hasWifi'},
-    const {'1': 'channel_utilization', '3': 19, '4': 1, '5': 2, '10': 'channelUtilization'},
-    const {'1': 'air_util_tx', '3': 20, '4': 1, '5': 2, '10': 'airUtilTx'},
+    const {'1': 'max_channels', '3': 3, '4': 1, '5': 13, '10': 'maxChannels'},
+    const {'1': 'firmware_version', '3': 4, '4': 1, '5': 9, '10': 'firmwareVersion'},
+    const {'1': 'error_code', '3': 5, '4': 1, '5': 14, '6': '.CriticalErrorCode', '10': 'errorCode'},
+    const {'1': 'error_address', '3': 6, '4': 1, '5': 13, '10': 'errorAddress'},
+    const {'1': 'error_count', '3': 7, '4': 1, '5': 13, '10': 'errorCount'},
+    const {'1': 'reboot_count', '3': 8, '4': 1, '5': 13, '10': 'rebootCount'},
+    const {'1': 'bitrate', '3': 9, '4': 1, '5': 2, '10': 'bitrate'},
+    const {'1': 'message_timeout_msec', '3': 10, '4': 1, '5': 13, '10': 'messageTimeoutMsec'},
+    const {'1': 'min_app_version', '3': 11, '4': 1, '5': 13, '10': 'minAppVersion'},
+    const {'1': 'air_period_tx', '3': 12, '4': 3, '5': 13, '10': 'airPeriodTx'},
+    const {'1': 'air_period_rx', '3': 13, '4': 3, '5': 13, '10': 'airPeriodRx'},
+    const {'1': 'has_wifi', '3': 14, '4': 1, '5': 8, '10': 'hasWifi'},
+    const {'1': 'channel_utilization', '3': 15, '4': 1, '5': 2, '10': 'channelUtilization'},
+    const {'1': 'air_util_tx', '3': 16, '4': 1, '5': 2, '10': 'airUtilTx'},
   ],
 };
 
 /// Descriptor for `MyNodeInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List myNodeInfoDescriptor = $convert.base64Decode('CgpNeU5vZGVJbmZvEh4KC215X25vZGVfbnVtGAEgASgNUglteU5vZGVOdW0SFwoHaGFzX2dwcxgCIAEoCFIGaGFzR3BzEiEKDG1heF9jaGFubmVscxgPIAEoDVILbWF4Q2hhbm5lbHMSKQoQZmlybXdhcmVfdmVyc2lvbhgGIAEoCVIPZmlybXdhcmVWZXJzaW9uEjEKCmVycm9yX2NvZGUYByABKA4yEi5Dcml0aWNhbEVycm9yQ29kZVIJZXJyb3JDb2RlEiMKDWVycm9yX2FkZHJlc3MYCCABKA1SDGVycm9yQWRkcmVzcxIfCgtlcnJvcl9jb3VudBgJIAEoDVIKZXJyb3JDb3VudBIhCgxyZWJvb3RfY291bnQYCiABKA1SC3JlYm9vdENvdW50EhgKB2JpdHJhdGUYCyABKAJSB2JpdHJhdGUSMAoUbWVzc2FnZV90aW1lb3V0X21zZWMYDSABKA1SEm1lc3NhZ2VUaW1lb3V0TXNlYxImCg9taW5fYXBwX3ZlcnNpb24YDiABKA1SDW1pbkFwcFZlcnNpb24SIgoNYWlyX3BlcmlvZF90eBgQIAMoDVILYWlyUGVyaW9kVHgSIgoNYWlyX3BlcmlvZF9yeBgRIAMoDVILYWlyUGVyaW9kUngSGQoIaGFzX3dpZmkYEiABKAhSB2hhc1dpZmkSLwoTY2hhbm5lbF91dGlsaXphdGlvbhgTIAEoAlISY2hhbm5lbFV0aWxpemF0aW9uEh4KC2Fpcl91dGlsX3R4GBQgASgCUglhaXJVdGlsVHg=');
+final $typed_data.Uint8List myNodeInfoDescriptor = $convert.base64Decode('CgpNeU5vZGVJbmZvEh4KC215X25vZGVfbnVtGAEgASgNUglteU5vZGVOdW0SFwoHaGFzX2dwcxgCIAEoCFIGaGFzR3BzEiEKDG1heF9jaGFubmVscxgDIAEoDVILbWF4Q2hhbm5lbHMSKQoQZmlybXdhcmVfdmVyc2lvbhgEIAEoCVIPZmlybXdhcmVWZXJzaW9uEjEKCmVycm9yX2NvZGUYBSABKA4yEi5Dcml0aWNhbEVycm9yQ29kZVIJZXJyb3JDb2RlEiMKDWVycm9yX2FkZHJlc3MYBiABKA1SDGVycm9yQWRkcmVzcxIfCgtlcnJvcl9jb3VudBgHIAEoDVIKZXJyb3JDb3VudBIhCgxyZWJvb3RfY291bnQYCCABKA1SC3JlYm9vdENvdW50EhgKB2JpdHJhdGUYCSABKAJSB2JpdHJhdGUSMAoUbWVzc2FnZV90aW1lb3V0X21zZWMYCiABKA1SEm1lc3NhZ2VUaW1lb3V0TXNlYxImCg9taW5fYXBwX3ZlcnNpb24YCyABKA1SDW1pbkFwcFZlcnNpb24SIgoNYWlyX3BlcmlvZF90eBgMIAMoDVILYWlyUGVyaW9kVHgSIgoNYWlyX3BlcmlvZF9yeBgNIAMoDVILYWlyUGVyaW9kUngSGQoIaGFzX3dpZmkYDiABKAhSB2hhc1dpZmkSLwoTY2hhbm5lbF91dGlsaXphdGlvbhgPIAEoAlISY2hhbm5lbFV0aWxpemF0aW9uEh4KC2Fpcl91dGlsX3R4GBAgASgCUglhaXJVdGlsVHg=');
 @$core.Deprecated('Use logRecordDescriptor instead')
 const LogRecord$json = const {
   '1': 'LogRecord',
@@ -346,57 +347,38 @@ const FromRadio$json = const {
   '1': 'FromRadio',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 13, '10': 'id'},
-    const {'1': 'packet', '3': 11, '4': 1, '5': 11, '6': '.MeshPacket', '9': 0, '10': 'packet'},
+    const {'1': 'packet', '3': 2, '4': 1, '5': 11, '6': '.MeshPacket', '9': 0, '10': 'packet'},
     const {'1': 'my_info', '3': 3, '4': 1, '5': 11, '6': '.MyNodeInfo', '9': 0, '10': 'myInfo'},
     const {'1': 'node_info', '3': 4, '4': 1, '5': 11, '6': '.NodeInfo', '9': 0, '10': 'nodeInfo'},
-    const {'1': 'config', '3': 6, '4': 1, '5': 11, '6': '.Config', '9': 0, '10': 'config'},
-    const {'1': 'log_record', '3': 7, '4': 1, '5': 11, '6': '.LogRecord', '9': 0, '10': 'logRecord'},
-    const {'1': 'config_complete_id', '3': 8, '4': 1, '5': 13, '9': 0, '10': 'configCompleteId'},
-    const {'1': 'rebooted', '3': 9, '4': 1, '5': 8, '9': 0, '10': 'rebooted'},
-    const {'1': 'moduleConfig', '3': 10, '4': 1, '5': 11, '6': '.ModuleConfig', '9': 0, '10': 'moduleConfig'},
+    const {'1': 'config', '3': 5, '4': 1, '5': 11, '6': '.Config', '9': 0, '10': 'config'},
+    const {'1': 'log_record', '3': 6, '4': 1, '5': 11, '6': '.LogRecord', '9': 0, '10': 'logRecord'},
+    const {'1': 'config_complete_id', '3': 7, '4': 1, '5': 13, '9': 0, '10': 'configCompleteId'},
+    const {'1': 'rebooted', '3': 8, '4': 1, '5': 8, '9': 0, '10': 'rebooted'},
+    const {'1': 'moduleConfig', '3': 9, '4': 1, '5': 11, '6': '.ModuleConfig', '9': 0, '10': 'moduleConfig'},
+    const {'1': 'channel', '3': 10, '4': 1, '5': 11, '6': '.Channel', '9': 0, '10': 'channel'},
   ],
   '8': const [
-    const {'1': 'payloadVariant'},
-  ],
-  '9': const [
-    const {'1': 2, '2': 3},
+    const {'1': 'payload_variant'},
   ],
 };
 
 /// Descriptor for `FromRadio`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List fromRadioDescriptor = $convert.base64Decode('CglGcm9tUmFkaW8SDgoCaWQYASABKA1SAmlkEiUKBnBhY2tldBgLIAEoCzILLk1lc2hQYWNrZXRIAFIGcGFja2V0EiYKB215X2luZm8YAyABKAsyCy5NeU5vZGVJbmZvSABSBm15SW5mbxIoCglub2RlX2luZm8YBCABKAsyCS5Ob2RlSW5mb0gAUghub2RlSW5mbxIhCgZjb25maWcYBiABKAsyBy5Db25maWdIAFIGY29uZmlnEisKCmxvZ19yZWNvcmQYByABKAsyCi5Mb2dSZWNvcmRIAFIJbG9nUmVjb3JkEi4KEmNvbmZpZ19jb21wbGV0ZV9pZBgIIAEoDUgAUhBjb25maWdDb21wbGV0ZUlkEhwKCHJlYm9vdGVkGAkgASgISABSCHJlYm9vdGVkEjMKDG1vZHVsZUNvbmZpZxgKIAEoCzINLk1vZHVsZUNvbmZpZ0gAUgxtb2R1bGVDb25maWdCEAoOcGF5bG9hZFZhcmlhbnRKBAgCEAM=');
+final $typed_data.Uint8List fromRadioDescriptor = $convert.base64Decode('CglGcm9tUmFkaW8SDgoCaWQYASABKA1SAmlkEiUKBnBhY2tldBgCIAEoCzILLk1lc2hQYWNrZXRIAFIGcGFja2V0EiYKB215X2luZm8YAyABKAsyCy5NeU5vZGVJbmZvSABSBm15SW5mbxIoCglub2RlX2luZm8YBCABKAsyCS5Ob2RlSW5mb0gAUghub2RlSW5mbxIhCgZjb25maWcYBSABKAsyBy5Db25maWdIAFIGY29uZmlnEisKCmxvZ19yZWNvcmQYBiABKAsyCi5Mb2dSZWNvcmRIAFIJbG9nUmVjb3JkEi4KEmNvbmZpZ19jb21wbGV0ZV9pZBgHIAEoDUgAUhBjb25maWdDb21wbGV0ZUlkEhwKCHJlYm9vdGVkGAggASgISABSCHJlYm9vdGVkEjMKDG1vZHVsZUNvbmZpZxgJIAEoCzINLk1vZHVsZUNvbmZpZ0gAUgxtb2R1bGVDb25maWcSJAoHY2hhbm5lbBgKIAEoCzIILkNoYW5uZWxIAFIHY2hhbm5lbEIRCg9wYXlsb2FkX3ZhcmlhbnQ=');
 @$core.Deprecated('Use toRadioDescriptor instead')
 const ToRadio$json = const {
   '1': 'ToRadio',
   '2': const [
-    const {'1': 'packet', '3': 2, '4': 1, '5': 11, '6': '.MeshPacket', '9': 0, '10': 'packet'},
-    const {'1': 'peer_info', '3': 3, '4': 1, '5': 11, '6': '.ToRadio.PeerInfo', '9': 0, '10': 'peerInfo'},
-    const {'1': 'want_config_id', '3': 100, '4': 1, '5': 13, '9': 0, '10': 'wantConfigId'},
-    const {'1': 'disconnect', '3': 104, '4': 1, '5': 8, '9': 0, '10': 'disconnect'},
+    const {'1': 'packet', '3': 1, '4': 1, '5': 11, '6': '.MeshPacket', '9': 0, '10': 'packet'},
+    const {'1': 'want_config_id', '3': 3, '4': 1, '5': 13, '9': 0, '10': 'wantConfigId'},
+    const {'1': 'disconnect', '3': 4, '4': 1, '5': 8, '9': 0, '10': 'disconnect'},
   ],
-  '3': const [ToRadio_PeerInfo$json],
   '8': const [
-    const {'1': 'payloadVariant'},
-  ],
-  '9': const [
-    const {'1': 1, '2': 2},
-    const {'1': 101, '2': 102},
-    const {'1': 102, '2': 103},
-    const {'1': 103, '2': 104},
-  ],
-};
-
-@$core.Deprecated('Use toRadioDescriptor instead')
-const ToRadio_PeerInfo$json = const {
-  '1': 'PeerInfo',
-  '2': const [
-    const {'1': 'app_version', '3': 1, '4': 1, '5': 13, '10': 'appVersion'},
-    const {'1': 'mqtt_gateway', '3': 2, '4': 1, '5': 8, '10': 'mqttGateway'},
+    const {'1': 'payload_variant'},
   ],
 };
 
 /// Descriptor for `ToRadio`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List toRadioDescriptor = $convert.base64Decode('CgdUb1JhZGlvEiUKBnBhY2tldBgCIAEoCzILLk1lc2hQYWNrZXRIAFIGcGFja2V0EjAKCXBlZXJfaW5mbxgDIAEoCzIRLlRvUmFkaW8uUGVlckluZm9IAFIIcGVlckluZm8SJgoOd2FudF9jb25maWdfaWQYZCABKA1IAFIMd2FudENvbmZpZ0lkEiAKCmRpc2Nvbm5lY3QYaCABKAhIAFIKZGlzY29ubmVjdBpOCghQZWVySW5mbxIfCgthcHBfdmVyc2lvbhgBIAEoDVIKYXBwVmVyc2lvbhIhCgxtcXR0X2dhdGV3YXkYAiABKAhSC21xdHRHYXRld2F5QhAKDnBheWxvYWRWYXJpYW50SgQIARACSgQIZRBmSgQIZhBnSgQIZxBo');
+final $typed_data.Uint8List toRadioDescriptor = $convert.base64Decode('CgdUb1JhZGlvEiUKBnBhY2tldBgBIAEoCzILLk1lc2hQYWNrZXRIAFIGcGFja2V0EiYKDndhbnRfY29uZmlnX2lkGAMgASgNSABSDHdhbnRDb25maWdJZBIgCgpkaXNjb25uZWN0GAQgASgISABSCmRpc2Nvbm5lY3RCEQoPcGF5bG9hZF92YXJpYW50');
 @$core.Deprecated('Use compressedDescriptor instead')
 const Compressed$json = const {
   '1': 'Compressed',

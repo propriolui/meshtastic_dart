@@ -33,13 +33,10 @@ const DeviceState$json = const {
     const {'1': 'no_save', '3': 9, '4': 1, '5': 8, '10': 'noSave'},
     const {'1': 'did_gps_reset', '3': 11, '4': 1, '5': 8, '10': 'didGpsReset'},
   ],
-  '9': const [
-    const {'1': 12, '2': 13},
-  ],
 };
 
 /// Descriptor for `DeviceState`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deviceStateDescriptor = $convert.base64Decode('CgtEZXZpY2VTdGF0ZRIkCgdteV9ub2RlGAIgASgLMgsuTXlOb2RlSW5mb1IGbXlOb2RlEhsKBW93bmVyGAMgASgLMgUuVXNlclIFb3duZXISIgoHbm9kZV9kYhgEIAMoCzIJLk5vZGVJbmZvUgZub2RlRGISMAoNcmVjZWl2ZV9xdWV1ZRgFIAMoCzILLk1lc2hQYWNrZXRSDHJlY2VpdmVRdWV1ZRIYCgd2ZXJzaW9uGAggASgNUgd2ZXJzaW9uEjMKD3J4X3RleHRfbWVzc2FnZRgHIAEoCzILLk1lc2hQYWNrZXRSDXJ4VGV4dE1lc3NhZ2USFwoHbm9fc2F2ZRgJIAEoCFIGbm9TYXZlEiIKDWRpZF9ncHNfcmVzZXQYCyABKAhSC2RpZEdwc1Jlc2V0SgQIDBAN');
+final $typed_data.Uint8List deviceStateDescriptor = $convert.base64Decode('CgtEZXZpY2VTdGF0ZRIkCgdteV9ub2RlGAIgASgLMgsuTXlOb2RlSW5mb1IGbXlOb2RlEhsKBW93bmVyGAMgASgLMgUuVXNlclIFb3duZXISIgoHbm9kZV9kYhgEIAMoCzIJLk5vZGVJbmZvUgZub2RlRGISMAoNcmVjZWl2ZV9xdWV1ZRgFIAMoCzILLk1lc2hQYWNrZXRSDHJlY2VpdmVRdWV1ZRIYCgd2ZXJzaW9uGAggASgNUgd2ZXJzaW9uEjMKD3J4X3RleHRfbWVzc2FnZRgHIAEoCzILLk1lc2hQYWNrZXRSDXJ4VGV4dE1lc3NhZ2USFwoHbm9fc2F2ZRgJIAEoCFIGbm9TYXZlEiIKDWRpZF9ncHNfcmVzZXQYCyABKAhSC2RpZEdwc1Jlc2V0');
 @$core.Deprecated('Use channelFileDescriptor instead')
 const ChannelFile$json = const {
   '1': 'ChannelFile',
@@ -60,8 +57,9 @@ const OEMStore$json = const {
     const {'1': 'oem_icon_bits', '3': 3, '4': 1, '5': 12, '10': 'oemIconBits'},
     const {'1': 'oem_font', '3': 4, '4': 1, '5': 14, '6': '.ScreenFonts', '10': 'oemFont'},
     const {'1': 'oem_text', '3': 5, '4': 1, '5': 9, '10': 'oemText'},
+    const {'1': 'oem_aes_key', '3': 6, '4': 1, '5': 12, '10': 'oemAesKey'},
   ],
 };
 
 /// Descriptor for `OEMStore`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List oEMStoreDescriptor = $convert.base64Decode('CghPRU1TdG9yZRIkCg5vZW1faWNvbl93aWR0aBgBIAEoDVIMb2VtSWNvbldpZHRoEiYKD29lbV9pY29uX2hlaWdodBgCIAEoDVINb2VtSWNvbkhlaWdodBIiCg1vZW1faWNvbl9iaXRzGAMgASgMUgtvZW1JY29uQml0cxInCghvZW1fZm9udBgEIAEoDjIMLlNjcmVlbkZvbnRzUgdvZW1Gb250EhkKCG9lbV90ZXh0GAUgASgJUgdvZW1UZXh0');
+final $typed_data.Uint8List oEMStoreDescriptor = $convert.base64Decode('CghPRU1TdG9yZRIkCg5vZW1faWNvbl93aWR0aBgBIAEoDVIMb2VtSWNvbldpZHRoEiYKD29lbV9pY29uX2hlaWdodBgCIAEoDVINb2VtSWNvbkhlaWdodBIiCg1vZW1faWNvbl9iaXRzGAMgASgMUgtvZW1JY29uQml0cxInCghvZW1fZm9udBgEIAEoDjIMLlNjcmVlbkZvbnRzUgdvZW1Gb250EhkKCG9lbV90ZXh0GAUgASgJUgdvZW1UZXh0Eh4KC29lbV9hZXNfa2V5GAYgASgMUglvZW1BZXNLZXk=');

@@ -13,7 +13,7 @@ class AdminMessage_ConfigType extends $pb.ProtobufEnum {
   static const AdminMessage_ConfigType DEVICE_CONFIG = AdminMessage_ConfigType._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DEVICE_CONFIG');
   static const AdminMessage_ConfigType POSITION_CONFIG = AdminMessage_ConfigType._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'POSITION_CONFIG');
   static const AdminMessage_ConfigType POWER_CONFIG = AdminMessage_ConfigType._(2, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'POWER_CONFIG');
-  static const AdminMessage_ConfigType WIFI_CONFIG = AdminMessage_ConfigType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'WIFI_CONFIG');
+  static const AdminMessage_ConfigType NETWORK_CONFIG = AdminMessage_ConfigType._(3, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'NETWORK_CONFIG');
   static const AdminMessage_ConfigType DISPLAY_CONFIG = AdminMessage_ConfigType._(4, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DISPLAY_CONFIG');
   static const AdminMessage_ConfigType LORA_CONFIG = AdminMessage_ConfigType._(5, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'LORA_CONFIG');
   static const AdminMessage_ConfigType BLUETOOTH_CONFIG = AdminMessage_ConfigType._(6, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'BLUETOOTH_CONFIG');
@@ -22,7 +22,7 @@ class AdminMessage_ConfigType extends $pb.ProtobufEnum {
     DEVICE_CONFIG,
     POSITION_CONFIG,
     POWER_CONFIG,
-    WIFI_CONFIG,
+    NETWORK_CONFIG,
     DISPLAY_CONFIG,
     LORA_CONFIG,
     BLUETOOTH_CONFIG,

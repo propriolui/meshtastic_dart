@@ -12,18 +12,22 @@ import 'dart:typed_data' as $typed_data;
 const TelemetrySensorType$json = const {
   '1': 'TelemetrySensorType',
   '2': const [
-    const {'1': 'NotSet', '2': 0},
+    const {'1': 'SENSOR_UNSET', '2': 0},
     const {'1': 'BME280', '2': 1},
     const {'1': 'BME680', '2': 2},
     const {'1': 'MCP9808', '2': 3},
     const {'1': 'INA260', '2': 4},
     const {'1': 'INA219', '2': 5},
     const {'1': 'BMP280', '2': 6},
+    const {'1': 'SHTC3', '2': 7},
+    const {'1': 'LPS22', '2': 8},
+    const {'1': 'QMC6310', '2': 9},
+    const {'1': 'QMI8658', '2': 10},
   ],
 };
 
 /// Descriptor for `TelemetrySensorType`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List telemetrySensorTypeDescriptor = $convert.base64Decode('ChNUZWxlbWV0cnlTZW5zb3JUeXBlEgoKBk5vdFNldBAAEgoKBkJNRTI4MBABEgoKBkJNRTY4MBACEgsKB01DUDk4MDgQAxIKCgZJTkEyNjAQBBIKCgZJTkEyMTkQBRIKCgZCTVAyODAQBg==');
+final $typed_data.Uint8List telemetrySensorTypeDescriptor = $convert.base64Decode('ChNUZWxlbWV0cnlTZW5zb3JUeXBlEhAKDFNFTlNPUl9VTlNFVBAAEgoKBkJNRTI4MBABEgoKBkJNRTY4MBACEgsKB01DUDk4MDgQAxIKCgZJTkEyNjAQBBIKCgZJTkEyMTkQBRIKCgZCTVAyODAQBhIJCgVTSFRDMxAHEgkKBUxQUzIyEAgSCwoHUU1DNjMxMBAJEgsKB1FNSTg2NTgQCg==');
 @$core.Deprecated('Use deviceMetricsDescriptor instead')
 const DeviceMetrics$json = const {
   '1': 'DeviceMetrics',

@@ -1,14 +1,15 @@
 import 'dart:async';
 import 'dart:math';
-import 'dart:typed_data';
 
-import 'package:meshtastic_dart/generated/admin.pb.dart';
-import 'package:meshtastic_dart/generated/mesh.pb.dart';
-import 'package:meshtastic_dart/generated/portnums.pbserver.dart';
-import 'package:meshtastic_dart/generated/remote_hardware.pbserver.dart';
-import 'package:meshtastic_dart/generated/telemetry.pb.dart';
-import 'package:meshtastic_dart/utils/queue.dart';
-import 'package:meshtastic_dart/utils/types.dart' as types;
+import './utils/constants.dart';
+
+import './generated/admin.pb.dart';
+import './generated/mesh.pb.dart';
+import './generated/portnums.pbserver.dart';
+import './generated/remote_hardware.pbserver.dart';
+import './generated/telemetry.pb.dart';
+import './utils/queue.dart';
+import './utils/types.dart' as types;
 
 abstract class Device {
   types.Status? status;
@@ -30,37 +31,51 @@ abstract class Device {
   Future<void> writeToRadio(List<int> data);
 
   // Streams that notify component of the packet arrived
-  StreamController<FromRadio> fromRadioStream = StreamController();
+  StreamController<types.Status> statusStream = StreamController.broadcast();
+  StreamController<FromRadio> fromRadioStream = StreamController.broadcast();
   StreamController<types.RemoteHardwarePacket> remoteHardwareStream =
-      StreamController();
-  StreamController<types.PositionPacket> positionStream = StreamController();
-  StreamController<types.UserPacket> userStream = StreamController();
-  StreamController<types.NodeInfoPacket> nodeInfoStream = StreamController();
-  StreamController<types.RoutingPacket> routingStream = StreamController();
-  StreamController<types.MessagePacket> messageStream = StreamController();
-  StreamController<types.PingPacket> pingStream = StreamController();
+      StreamController.broadcast();
+  StreamController<types.PositionPacket> positionStream =
+      StreamController.broadcast();
+  StreamController<types.UserPacket> userStream = StreamController.broadcast();
+  StreamController<types.NodeInfoPacket> nodeInfoStream =
+      StreamController.broadcast();
+  StreamController<types.RoutingPacket> routingStream =
+      StreamController.broadcast();
+  StreamController<types.MessagePacket> messageStream =
+      StreamController.broadcast();
+  StreamController<types.PingPacket> pingStream = StreamController.broadcast();
   StreamController<types.ModuleConfigPacket> moduleConfigStream =
-      StreamController();
-  StreamController<types.IpTunnelPacket> ipTunnelStream = StreamController();
-  StreamController<types.WayPointPacket> waypointStream = StreamController();
-  StreamController<types.SerialPacket> serialStream = StreamController();
+      StreamController.broadcast();
+  StreamController<types.IpTunnelPacket> ipTunnelStream =
+      StreamController.broadcast();
+  StreamController<types.WayPointPacket> waypointStream =
+      StreamController.broadcast();
+  StreamController<types.SerialPacket> serialStream =
+      StreamController.broadcast();
   StreamController<types.StoreForwardPacket> storeForwardStream =
-      StreamController();
-  StreamController<types.RangeTestPacket> rangeTestStream = StreamController();
-  StreamController<types.TelemetryPacket> telemetryStream = StreamController();
-  StreamController<types.PrivatePacket> privateStream = StreamController();
-  StreamController<types.AtakPacket> atakStream = StreamController();
-  StreamController<types.ChannelPacket> channelStream = StreamController();
-  StreamController<types.ConfigPacket> configStream = StreamController();
+      StreamController.broadcast();
+  StreamController<types.RangeTestPacket> rangeTestStream =
+      StreamController.broadcast();
+  StreamController<types.TelemetryPacket> telemetryStream =
+      StreamController.broadcast();
+  StreamController<types.PrivatePacket> privateStream =
+      StreamController.broadcast();
+  StreamController<types.AtakPacket> atakStream = StreamController.broadcast();
+  StreamController<types.ChannelPacket> channelStream =
+      StreamController.broadcast();
+  StreamController<types.ConfigPacket> configStream =
+      StreamController.broadcast();
   StreamController<types.DeviceMetadataPacket> deviceMetadataStream =
-      StreamController();
-  StreamController<MeshPacket> meshStream = StreamController();
-  StreamController<DateTime> heartBeatStream = StreamController();
-  StreamController<MyNodeInfo> myNodeStream = StreamController();
-  StreamController<LogRecord> logRecordStream = StreamController();
+      StreamController.broadcast();
+  StreamController<MeshPacket> meshStream = StreamController.broadcast();
+  StreamController<DateTime> heartBeatStream = StreamController.broadcast();
+  StreamController<MyNodeInfo> myNodeStream = StreamController.broadcast();
+  StreamController<LogRecord> logRecordStream = StreamController.broadcast();
 
   void updateDeviceStatus(types.Status status) {
     if (this.status != status) {
+      statusStream.sink.add(status);
       this.status = status;
     }
   }
@@ -68,11 +83,52 @@ abstract class Device {
   void configuration() {
     updateDeviceStatus(types.Status.configuring);
 
-    var toRadio = ToRadio(wantConfigId: confId);
+    final toRadio = ToRadio(wantConfigId: confId).writeToBuffer();
+
+    Future.delayed(const Duration(milliseconds: 200), () async {
+      await sendRaw(0, toRadio);
+    });
   }
 
-  Future<void> sendRaw(
-      int id, Uint8List toRadio, Future<void> Function(int id) callback) async {
+  Future<void> sendPacket(
+      List<int> byteData, PortNum portNum, int? destinationNum,
+      {bool wantAck = false,
+      int channel = 0,
+      bool wantResponse = false,
+      bool echoResponse = false,
+      int emoji = 0,
+      int replyId = 0,
+      Future<void> Function(int id)? callback}) async {
+    final meshPacket = MeshPacket(
+        decoded: Data(
+            payload: byteData,
+            portnum: portNum,
+            wantResponse: wantResponse,
+            emoji: emoji,
+            replyId: replyId,
+            dest: destinationNum,
+            requestId: 0,
+            source: confId),
+        from: myNodeInfo.myNodeNum,
+        to: destinationNum ?? broadcastNum,
+        id: _randomIdGenerator(),
+        wantAck: wantAck,
+        channel: channel);
+
+    final toRadio = ToRadio(packet: meshPacket).writeToBuffer();
+
+    if (echoResponse) {
+      await meshPacketHandler(meshPacket);
+    }
+    if (callback != null) {
+      await sendRaw(meshPacket.id, toRadio, callback: callback);
+    } else {
+      await sendRaw(meshPacket.id, toRadio);
+    }
+  }
+
+  Future<void> sendRaw(int id, List<int> toRadio,
+      {Future<void> Function(int id)? callback}) async {
     if (toRadio.length > 512) {
       print("Message too long");
     } else {
@@ -83,7 +139,6 @@ abstract class Device {
 
   Future<void> fromRadioHandler(List<int> fromRadio) async {
     final message = FromRadio.fromBuffer(fromRadio);
-
     fromRadioStream.sink.add(message);
 
     switch (message.whichPayloadVariant()) {
@@ -91,9 +146,6 @@ abstract class Device {
         await meshPacketHandler(message.packet);
         break;
       case FromRadio_PayloadVariant.myInfo:
-        if (double.parse(message.myInfo.firmwareVersion) < 10) {
-          print("Firmware outdated, please upgrade");
-        }
         myNodeStream.sink.add(message.myInfo);
         break;
       case FromRadio_PayloadVariant.nodeInfo:
@@ -131,6 +183,9 @@ abstract class Device {
         break;
       case FromRadio_PayloadVariant.notSet:
         // nothing
+        break;
+      case FromRadio_PayloadVariant.channel:
+        // TODO: Handle this case.
         break;
     }
   }
@@ -193,25 +248,25 @@ abstract class Device {
         break;
       case PortNum.ADMIN_APP:
         var adminMessage = AdminMessage.fromBuffer(dataPacket.payload);
-        switch (adminMessage.whichVariant()) {
-          case AdminMessage_Variant.getChannelResponse:
+        switch (adminMessage.whichPayloadVariant()) {
+          case AdminMessage_PayloadVariant.getChannelResponse:
             channelStream.sink.add(types.ChannelPacket(
                 packet: meshPacket, data: adminMessage.getChannelResponse));
             break;
-          case AdminMessage_Variant.getOwnerResponse:
+          case AdminMessage_PayloadVariant.getOwnerResponse:
             userStream.sink.add(types.UserPacket(
                 packet: meshPacket, data: adminMessage.getOwnerResponse));
             break;
-          case AdminMessage_Variant.getConfigResponse:
+          case AdminMessage_PayloadVariant.getConfigResponse:
             configStream.sink.add(types.ConfigPacket(
                 packet: meshPacket, data: adminMessage.getConfigResponse));
             break;
-          case AdminMessage_Variant.getModuleConfigResponse:
+          case AdminMessage_PayloadVariant.getModuleConfigResponse:
             moduleConfigStream.sink.add(types.ModuleConfigPacket(
                 packet: meshPacket,
                 data: adminMessage.getModuleConfigResponse));
             break;
-          case AdminMessage_Variant.getDeviceMetadataResponse:
+          case AdminMessage_PayloadVariant.getDeviceMetadataResponse:
             deviceMetadataStream.sink.add(types.DeviceMetadataPacket(
                 packet: meshPacket,
                 data: adminMessage.getDeviceMetadataResponse));
@@ -230,8 +285,8 @@ abstract class Device {
             types.IpTunnelPacket(packet: meshPacket, data: dataPacket.payload));
         break;
       case PortNum.NODEINFO_APP:
-        nodeInfoStream.sink.add(types.NodeInfoPacket(
-            packet: meshPacket, data: NodeInfo.fromBuffer(dataPacket.payload)));
+        userStream.sink.add(types.UserPacket(
+            packet: meshPacket, data: User.fromBuffer(dataPacket.payload)));
         break;
       case PortNum.POSITION_APP:
         positionStream.sink.add(types.PositionPacket(
